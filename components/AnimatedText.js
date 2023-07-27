@@ -21,7 +21,7 @@ const AnimatedText = ({ text }) => {
             scrub: true,
           },
         });
-        scrollTimeline.staggerTo(chars, 0.9, { opacity: 1 }, 0.04);
+        scrollTimeline.staggerTo(chars, 0.9, { opacity: 0.9 }, 0.04);
       }
     });
 

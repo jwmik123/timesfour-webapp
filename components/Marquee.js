@@ -2,9 +2,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { Bebas_Neue } from "next/font/google";
-const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Marquee = () => {
@@ -14,13 +11,13 @@ const Marquee = () => {
     if (marqueeRef.current) {
       let direction = 1;
 
-      const roll1 = roll(".marquee-inner-wrap", { duration: 13 }, false), // Added the third parameter `reverse`
+      const roll1 = roll(".marquee-inner-wrap", { duration: 13 }, false),
         scroll = ScrollTrigger.create({
-          trigger: marqueeRef.current, // Changed the trigger
+          trigger: marqueeRef.current,
           onUpdate(self) {
             if (self.direction !== direction) {
               direction *= -1;
-              roll1.timeScale(direction); // Used the `timeScale()` method on the timeline
+              roll1.timeScale(direction);
             }
             self.direction === -1
               ? marqueeRef.current.classList.remove("flipped")
@@ -76,7 +73,7 @@ const Marquee = () => {
       <ul className="relative flex items-center marquee-inner-wrap">
         <li class="single-marquee-part flex relative items-center">
           <h3 class="big whitespace-nowrap py-5 ml-5 flex items-center bottom-0 gap-5">
-            Film Times four
+            Time for film
             <svg
               width="24"
               height="24"
@@ -100,7 +97,7 @@ const Marquee = () => {
         </li>
         <li class="single-marquee-part flex relative items-center">
           <h3 class="big whitespace-nowrap py-5 ml-5 flex items-center gap-5">
-            Marketing Times four
+            Time for Marketing
             <svg
               width="24"
               height="24"
@@ -124,7 +121,7 @@ const Marquee = () => {
         </li>
         <li class="single-marquee-part flex relative items-center">
           <h3 class="big whitespace-nowrap py-5 ml-5 flex items-center gap-5">
-            Development Times four
+            Time for Development
             <svg
               width="24"
               height="24"
@@ -148,7 +145,7 @@ const Marquee = () => {
         </li>
         <li class="single-marquee-part flex relative items-center">
           <h3 class="big whitespace-nowrap py-5 ml-5 flex items-center gap-5">
-            Design Times four
+            Time for design
             <svg
               width="24"
               height="24"

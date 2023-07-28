@@ -23,7 +23,7 @@ export default function Carousel() {
             start: "top bottom",
             end: "bottom top",
           },
-          delay: index * 0.5,
+          delay: index * 0.5 + 0.5,
           duration: 0.8,
         }
       );
@@ -41,7 +41,7 @@ export default function Carousel() {
             start: "top bottom",
             end: "bottom top",
           },
-          delay: index * 0.3,
+          delay: index * 0.5,
           duration: 0.3,
         }
       );

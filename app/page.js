@@ -1,10 +1,11 @@
 "use client";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import AnimatedText from "@/components/AnimatedText";
 import Carousel from "@/components/Carousel";
 import Masthead from "@/components/Masthead";
-import { useEffect } from "react";
+import Marquee from "@/components/Marquee";
 
 export default function Home() {
   useEffect(() => {
@@ -31,13 +32,13 @@ export default function Home() {
   return (
     <>
       <Masthead />
-      <div className="flex h-[50vh] items-center justify-center w-full">
+      <div className="flex h-[50vh] items-center justify-center w-full mx-10">
         <div className="hidden w-1/3 md:block"></div>
         <div className="w-full md:w-2/3">
           <AnimatedText text={sentence} />
         </div>
       </div>
-      <div>
+      <div className="mx-10">
         <h2 className="text-2xl">
           <li> Hoe wij onze klanten helpen</li>
         </h2>
@@ -56,6 +57,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Marquee />
     </>
   );
 }

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Masthead() {
   return (
-    <>
+    <div className="mx-10">
       <span className="underline underline-offset-2">A creative studio.</span>
       <div
         className={`${bebas.className} leading-[15vw] text-[16vw] flex flex-col w-full py-10 justify-center cursor-default`}
@@ -35,6 +35,6 @@ export default function Masthead() {
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

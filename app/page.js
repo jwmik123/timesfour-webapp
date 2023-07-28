@@ -34,7 +34,7 @@ export default function Home() {
       <Masthead />
       <div className="flex h-[50vh] items-center justify-center w-full mx-10">
         <div className="hidden w-1/3 md:block"></div>
-        <div className="w-full md:w-2/3">
+        <div className="w-full mx-10 md:w-2/3">
           <AnimatedText text={sentence} />
         </div>
       </div>

@@ -58,6 +58,11 @@ export default function Home() {
         </div>
       </div>
       <Marquee />
+      <div className="mx-10">
+        <h2 className="text-2xl">
+          <li> Wat ze over ons zeggen</li>
+        </h2>
+      </div>
     </>
   );
 }

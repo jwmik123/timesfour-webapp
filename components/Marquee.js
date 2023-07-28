@@ -14,7 +14,7 @@ const Marquee = () => {
     if (marqueeRef.current) {
       let direction = 1;
 
-      const roll1 = roll(".marquee-inner-wrap", { duration: 12 }, false), // Added the third parameter `reverse`
+      const roll1 = roll(".marquee-inner-wrap", { duration: 13 }, false), // Added the third parameter `reverse`
         scroll = ScrollTrigger.create({
           trigger: marqueeRef.current, // Changed the trigger
           onUpdate(self) {
@@ -70,7 +70,7 @@ const Marquee = () => {
 
   return (
     <div
-      className={`relative flex overflow-auto rounded-xl text-6xl text-black bg-yellow-400 marquee ${bebas.className}`}
+      className={`relative flex overflow-auto rounded-xl text-6xl text-black bg-yellow-400 marquee font-rift font-semibold`}
       ref={marqueeRef}
     >
       <ul className="relative flex items-center marquee-inner-wrap">

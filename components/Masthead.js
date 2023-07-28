@@ -11,7 +11,7 @@ export default function Masthead() {
     <div className="mx-10">
       <span className="underline underline-offset-2">A creative studio.</span>
       <div
-        className={`${bebas.className} leading-[15vw] text-[16vw] flex flex-col w-full py-10 justify-center cursor-default`}
+        className={`font-rift font-semibold leading-[15vw] text-[16vw] flex flex-col w-full py-10 justify-center cursor-default`}
       >
         <div className="flex justify-between">
           <span>times</span>

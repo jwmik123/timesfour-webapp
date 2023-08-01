@@ -1,6 +1,4 @@
 "use client";
-import { Bebas_Neue } from "next/font/google";
-const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,10 +6,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Masthead() {
   return (
-    <div className="mx-10">
+    <div className="min-h-full mx-10">
       <span className="underline underline-offset-2">A creative studio.</span>
       <div
-        className={`font-rift font-semibold leading-[15vw] text-[16vw] flex flex-col w-full py-10 justify-center cursor-default`}
+        className={`font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full py-5 justify-center cursor-default`}
       >
         <div className="flex justify-between">
           <span>times</span>

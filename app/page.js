@@ -6,6 +6,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Carousel from "@/components/Carousel";
 import Masthead from "@/components/Masthead";
 import Marquee from "@/components/Marquee";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default function Home() {
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function Home() {
         </div>
       </div>
       <Marquee />
+      <VideoPlayer />
       <div className="mx-10 my-36">
         <h2 className="mb-16 text-2xl">
           <li> Wat ze over ons zeggen</li>

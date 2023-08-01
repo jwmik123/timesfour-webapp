@@ -10,6 +10,12 @@ module.exports = {
       rift: ["rift", "sans-serif"],
     },
     extend: {
+      colors: {
+        yellow: {
+          400: "#FFDF00",
+        },
+        black: "#141414",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

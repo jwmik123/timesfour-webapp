@@ -4,36 +4,43 @@ import { gsap } from "gsap";
 
 export default function VideoPlayer() {
   const soundRef = useRef(null);
+  const outerRef = useRef(null);
   const [soundPos, setSoundPos] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
-    gsap.to(soundRef.current, {
-      duration: 0.5,
-      left: soundPos.x,
-      top: soundPos.y,
-      ease: "power1.out",
-    });
-  }, [soundPos]);
+  //   useEffect(() => {
+  //     gsap.to(soundRef.current, {
+  //       duration: 0.5,
+  //       left: soundPos.x,
+  //       top: soundPos.y,
+  //       ease: "power1.out",
+  //     });
+  //   }, [soundPos]);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setSoundPos({ x: e.clientX, y: e.clientY });
-    };
+  //   useEffect(() => {
+  //     const handleMouseMove = (e) => {
+  //       setSoundPos({
+  //         x: e.clientX,
+  //         y: e.clientY,
+  //       });
+  //     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+  //     outerRef.current.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  //     return () => {
+  //       outerRef.current.removeEventListener("mousemove", handleMouseMove);
+  //     };
+  //   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full overflow-hidden">
+    <div
+      ref={outerRef}
+      className="relative flex items-center justify-center w-full overflow-hidden"
+    >
       <span
         ref={soundRef}
-        style={{ left: soundPos.x + 100, top: soundPos.y - 50 }}
-        className="absolute flex items-center justify-center w-24 h-24 bg-black rounded-full cursor-pointer"
+        style={{ position: "absolute", left: soundPos.x, top: soundPos.y }}
+        className="flex items-center justify-center w-24 h-24 bg-black rounded-full cursor-pointer "
       >
         <svg
           width="22"
@@ -45,20 +52,20 @@ export default function VideoPlayer() {
           <path
             d="M14 1C19.1667 5.83335 26.4 18.6 14 31"
             stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
+            strokeWidth="3"
+            strokeLinecap="round"
           />
           <path
             d="M8 7C11.1667 9.66673 15.6 17.0001 8 25"
             stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
+            strokeWidth="3"
+            strokeLinecap="round"
           />
           <path
             d="M1 13C3.26387 14.3334 6.43329 17.6001 1 20"
             stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
+            strokeWidth="3"
+            strokeLinecap="round"
           />
         </svg>
       </span>

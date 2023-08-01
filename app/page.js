@@ -62,7 +62,7 @@ export default function Home() {
       <VideoPlayer />
       <div className="mx-10 my-36">
         <h2 className="mb-16 text-2xl">
-          <li> Wat ze over ons zeggen</li>
+          <li> Reviews</li>
         </h2>
         <div className="flex gap-10">
           <div className="flex flex-col justify-between p-8 bg-[#393939] border border-gray-400 rounded">

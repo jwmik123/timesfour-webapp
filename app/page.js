@@ -60,7 +60,8 @@ export default function Home() {
       </div>
       <Marquee />
       <VideoPlayer />
-      <div className="mx-10 my-36">
+      <Marquee />
+      <div className="mx-10 py-36">
         <h2 className="mb-16 text-2xl">
           <li> Reviews</li>
         </h2>

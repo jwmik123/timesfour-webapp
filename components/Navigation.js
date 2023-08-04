@@ -6,7 +6,7 @@ export const Navigation = ({ font }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <nav className="flex justify-between mx-10 my-10">
+    <nav className="flex justify-between py-10 mx-10">
       <span
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

@@ -19,13 +19,12 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/sxa0vqz.css" />
       </head>
       <body
-        className={`${inter.className} selection:bg-yellow-400 overflow-hidden`}
+        className={`${inter.className} overflow-hidden selection:bg-yellow-400`}
       >
-        <div className="min-h-screen bg-black rounded-br-3xl rounded-bl-3xl">
+        <div className="min-h-screen bg-black  rounded-br-3xl rounded-bl-3xl">
           <Navigation font={bebas} />
           {children}
         </div>
-
         <Footer />
       </body>
     </html>

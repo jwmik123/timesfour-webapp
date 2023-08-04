@@ -67,7 +67,7 @@ const Marquee = () => {
 
   return (
     <div
-      className={`relative flex rounded-xl text-6xl text-black bg-yellow-400 marquee font-rift font-semibold overflow-hidden`}
+      className={`relative flex text-6xl text-black bg-yellow-400 marquee font-rift font-semibold overflow-hidden`}
       ref={marqueeRef}
     >
       <ul className="relative flex items-center marquee-inner-wrap">

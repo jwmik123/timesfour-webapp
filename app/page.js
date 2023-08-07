@@ -58,18 +58,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <ul className="bg-white">
-        <li>
-          <a href="#" className="nav-link">
-            <span>Privacy Policy</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="relative block nav-link">
-            <span>Terms &amp; Conditions</span>
-          </a>
-        </li>
-      </ul>
       <Marquee />
       <VideoPlayer />
       <div className="mx-10 py-36">

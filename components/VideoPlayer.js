@@ -70,7 +70,13 @@ export default function VideoPlayer() {
         </svg>
       </span>
       <div className="absolute w-full bg-black opacity-20 aspect-video"></div>
-      <video className="w-full aspect-video" autoPlay loop muted playsInline>
+      <video
+        className="w-2/3 mt-40 aspect-video rounded-xl"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
         <source src="https://mik-development.s3.eu-central-1.amazonaws.com/murseeheader.mp4" />
       </video>
     </div>

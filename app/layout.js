@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} overflow-hidden selection:bg-yellow-400`}
       >
-        <div className="min-h-screen bg-black  rounded-br-3xl rounded-bl-3xl">
+        <div className="min-h-screen bg-black rounded-br-3xl rounded-bl-3xl">
           <Navigation font={bebas} />
           {children}
         </div>

@@ -53,11 +53,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* <span className="font-rift text-[24.4vw] leading-[20vw] font-bold pointer-events-none select-none">
-            TIMES FOUR
-          </span> */}
-
-          <span className="">
+          <span className="footer-text">
             <svg
               id="Laag_2"
               data-name="Laag 2"

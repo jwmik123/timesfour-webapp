@@ -79,7 +79,7 @@ export default function Home() {
               sapien.”
             </p>
           </div>
-          <div className="flex flex-col justify-between p-8 bg-[#393939] border border-gray-400 rounded">
+          <div className="flex flex-col justify-between p-8 bg-[#393939] border border-gray-500 rounded">
             <div className="flex">
               <div className="w-16 bg-yellow-400 rounded-full logo aspect-square"></div>
               <div className="flex flex-col justify-center ml-5">

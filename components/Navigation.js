@@ -22,7 +22,7 @@ export const Navigation = ({ font }) => {
         <li className="">Over ons</li>
       </ul>
 
-      <button className="px-6 py-2 text-black bg-yellow-400 rounded-md">
+      <button className="px-12 py-2 text-black transition-colors bg-white rounded-sm hover:bg-yellow-400">
         Contact
       </button>
     </nav>

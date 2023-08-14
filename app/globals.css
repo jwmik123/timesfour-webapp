@@ -28,3 +28,14 @@ body {
 .swiper-pagination-bullet-active {
   background: white;
 }
+
+.animated-text p {
+  font-size: 3.5vw;
+  margin: 0;
+  margin-right: 1.5vw;
+  font-weight: 700;
+}
+
+.animated-text span {
+  opacity: 0.2;
+}

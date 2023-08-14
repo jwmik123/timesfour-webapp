@@ -1,12 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function VideoPlayer() {
-  const soundRef = useRef(null);
   const outerRef = useRef(null);
-  const [soundPos, setSoundPos] = useState({ x: 0, y: 0 });
-  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   //   useEffect(() => {
   //     gsap.to(soundRef.current, {
@@ -32,12 +31,32 @@ export default function VideoPlayer() {
   //     };
   //   }, []);
 
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: outerRef.current,
+        scrub: true,
+        start: "top 100%",
+        end: "bottom 20%",
+      },
+    });
+    timeline
+      .from(videoRef.current, {
+        clipPath: "inset(100%)",
+        ease: "power1.out",
+        duration: 1,
+      })
+      .to(videoRef.current, { clipPath: "inset(0%)" });
+  }, []);
+
   return (
     <div
       ref={outerRef}
       className="relative flex items-center justify-center w-full overflow-hidden"
     >
-      <span
+      {/* <span
         ref={soundRef}
         style={{ position: "absolute", left: soundPos.x, top: soundPos.y }}
         className="flex items-center justify-center w-24 h-24 bg-black rounded-full cursor-pointer "
@@ -68,9 +87,10 @@ export default function VideoPlayer() {
             strokeLinecap="round"
           />
         </svg>
-      </span>
+      </span> */}
       <div className="absolute w-full bg-black opacity-20 aspect-video"></div>
       <video
+        ref={videoRef}
         className="w-2/3 mt-40 aspect-video rounded-xl"
         autoPlay
         loop

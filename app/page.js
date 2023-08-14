@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import AnimatedText from "@/components/AnimatedText";
@@ -9,7 +9,7 @@ import Marquee from "@/components/Marquee";
 import VideoPlayer from "@/components/VideoPlayer";
 
 export default function Home() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const lenis = new Lenis({
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -28,7 +28,7 @@ export default function Home() {
     requestAnimationFrame(raf);
   });
   const sentence =
-    "An agency with a story of stories. Times Four is a team creating allround communication projects and boutique experiences.";
+    "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
 
   return (
     <>

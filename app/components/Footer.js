@@ -22,18 +22,19 @@ export default function Footer() {
             </div>
             <div className="flex justify-between w-full text-gray-600 md:w-1/2 felx-col">
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Legal</h3>
+                <h3 className="text-2xl text-black ">Legal</h3>
                 <ul>
                   <li>
-                    <Link href="/privacy-policy">
-                      <span className="transition hover:translate-x-10">
-                        Privacy Policy
-                      </span>
+                    <Link
+                      href="/privacy-policy"
+                      className="relative block link"
+                    >
+                      <span alt="Privacy Policy">Privacy Policy</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="relative block nav-link">
-                      <span className="hover:translate-x-5">
+                    <Link href="#" className="relative block link nav-link">
+                      <span alt="Terms &amp; Conditions">
                         Terms &amp; Conditions
                       </span>
                     </Link>

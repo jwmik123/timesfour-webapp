@@ -1,16 +1,17 @@
-import { Navigation } from "@/components/Navigation";
+import { Navigation } from "@/app/components/Navigation";
 import { Inter } from "next/font/google";
 import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Experience } from "./components/Experience";
 
 const inter = Inter({ subsets: ["latin"] });
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: "Times Four Studio",
+  title: "Times Four - Creative Studio",
   description: "Your company times four.",
 };
 

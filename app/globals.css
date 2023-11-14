@@ -39,3 +39,39 @@ body {
 .animated-text span {
   opacity: 0.2;
 }
+
+/* footer .link span::before {
+  position: absolute;
+  color: #000;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  content: attr(alt);
+  transition: all 0.3s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+footer .link span:hover::before {
+  transform: scale(1);
+  opacity: 1;
+} */
+
+footer .link span {
+  position: relative;
+  display: inline-block;
+}
+
+footer .link span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-bottom: 1px solid #000;
+  transition: width 0.3s;
+}
+
+footer .link span:hover::after {
+  width: 100%;
+}

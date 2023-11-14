@@ -2,11 +2,11 @@
 import { useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
-import AnimatedText from "@/components/AnimatedText";
-import Carousel from "@/components/Carousel";
-import Masthead from "@/components/Masthead";
-import Marquee from "@/components/Marquee";
-import VideoPlayer from "@/components/VideoPlayer";
+import AnimatedText from "@/app/components/AnimatedText";
+import Carousel from "@/app/components/Carousel";
+import Masthead from "@/app/components/Masthead";
+import Marquee from "@/app/components/Marquee";
+import VideoPlayer from "@/app/components/VideoPlayer";
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -35,7 +35,7 @@ export default function Home() {
       <Masthead />
       <div className="flex h-[50vh] items-center justify-center w-full mx-10">
         <div className="hidden w-1/3 md:block"></div>
-        <div className="w-full mx-10 md:w-2/3">
+        <div className="w-full mx-10 md:w-1/3">
           <AnimatedText text={sentence} />
         </div>
       </div>

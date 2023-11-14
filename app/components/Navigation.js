@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export const Navigation = ({ font }) => {
@@ -18,7 +19,9 @@ export const Navigation = ({ font }) => {
       <ul className="flex items-center justify-between gap-10 text-lg">
         <li className="">Home</li>
         <li className="">Werk</li>
-        <li className="">Oplossingen</li>
+        <li className="">
+          <Link href="/projects/">Oplossingen</Link>
+        </li>
         <li className="">Over ons</li>
       </ul>
 

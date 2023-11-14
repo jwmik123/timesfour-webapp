@@ -42,14 +42,44 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Handige links</h3>
-                <p>Nieuwsbrief</p>
-                <p>Vacatures</p>
+                <h3 className="text-2xl text-black ">Legal</h3>
+                <ul>
+                  <li>
+                    <Link
+                      href="/privacy-policy"
+                      className="relative block link"
+                    >
+                      <span alt="Privacy Policy">Privacy Policy</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="relative block link nav-link">
+                      <span alt="Terms &amp; Conditions">
+                        Terms &amp; Conditions
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Socials</h3>
-                <p>LinkedIn</p>
-                <p>Instagram</p>
+                <h3 className="text-2xl text-black ">Legal</h3>
+                <ul>
+                  <li>
+                    <Link
+                      href="/privacy-policy"
+                      className="relative block link"
+                    >
+                      <span alt="Privacy Policy">Privacy Policy</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" className="relative block link nav-link">
+                      <span alt="Terms &amp; Conditions">
+                        Terms &amp; Conditions
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Masthead() {
   const [hoveredItem, setHoveredItem] = useState("Development");
 
+  // Delay for the hover effect
   const debounce = (func, delay) => {
     let inDebounce;
     return function () {
@@ -20,25 +21,23 @@ export default function Masthead() {
       inDebounce = setTimeout(() => func.apply(context, args), delay);
     };
   };
-
   const setHoveredItemDebounced = useCallback(
     debounce(setHoveredItem, 150),
     []
   );
 
   return (
-    <div className="relative min-h-full mx-10">
-      <span className="underline underline-offset-2">A creative studio.</span>
+    <div className="relative mx-10">
       <Canvas
         shadows
         camera={{ position: [5, 5, 5], fov: 55 }}
-        className="w-full bg-black aspect-video"
+        className="relative w-full aspect-video"
       >
         <Experience activeItem={hoveredItem} />
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={` absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full py-5  h-full cursor-default`}
+        className={`absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full py-5 cursor-default`}
       >
         <div className="flex justify-between">
           <span>times</span>

@@ -16,17 +16,12 @@ export const Navigation = ({ font }) => {
         {hovered ? "Times Four" : "X4"}
       </span>
 
-      <ul className="flex items-center justify-between gap-10 text-lg">
-        <li className="">Home</li>
-        <li className="">Werk</li>
-        <li className="">
-          <Link href="/projects/">Oplossingen</Link>
-        </li>
-        <li className="">Over ons</li>
-      </ul>
+      <div className="flex items-center justify-between">
+        <span>A Creative Studio.</span>
+      </div>
 
-      <button className="px-12 py-2 text-black transition-colors bg-white rounded-sm hover:bg-yellow-400">
-        Contact
+      <button className="px-12 py-2 text-white transition-colors border border-white rounded-full hover:bg-white hover:text-black">
+        Menu
       </button>
     </nav>
   );

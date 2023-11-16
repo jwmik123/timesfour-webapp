@@ -27,17 +27,17 @@ export default function Masthead() {
   );
 
   return (
-    <div className="relative mx-10">
+    <div className="relative mx-10 min-h-[100vh]">
       <Canvas
         shadows
         camera={{ position: [5, 5, 5], fov: 55 }}
-        className="relative w-full aspect-video"
+        className="relative w-full aspect-video pt-32"
       >
         <Experience activeItem={hoveredItem} />
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full py-5 cursor-default`}
+        className={`absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full justify-center h-full py-5 cursor-default`}
       >
         <div className="flex justify-between">
           <span>times</span>

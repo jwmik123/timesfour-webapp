@@ -5,10 +5,8 @@ import "./globals.css";
 import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
-import { Experience } from "./components/Experience";
 
 const inter = Inter({ subsets: ["latin"] });
-const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
   title: "Times Four - Creative Studio",
@@ -26,7 +24,7 @@ export default function RootLayout({ children }) {
       >
         <Suspense fallback={<Loading />}>
           <div className="min-h-screen bg-black rounded-br-3xl rounded-bl-3xl">
-            <Navigation font={bebas} />
+
             {children}
           </div>
           <Footer />

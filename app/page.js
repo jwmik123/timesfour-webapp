@@ -7,7 +7,9 @@ import Carousel from "@/app/components/Carousel";
 import Masthead from "@/app/components/Masthead";
 import Marquee from "@/app/components/Marquee";
 import VideoPlayer from "@/app/components/VideoPlayer";
-
+import {Navigation} from "@/app/components/Navigation";
+import {Bebas_Neue} from "next/font/google";
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 export default function Home() {
   useLayoutEffect(() => {
     const lenis = new Lenis({
@@ -31,11 +33,12 @@ export default function Home() {
     "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
 
   return (
-    <>
+    <div className="relative w-full">
+      <Navigation font={bebas} />
       <Masthead />
-      <div className="flex h-[50vh] items-center justify-center w-full mx-10">
+      <div className="flex items-center justify-center w-full mx-10 pb-32">
         <div className="hidden w-1/3 md:block"></div>
-        <div className="w-full mx-10 md:w-1/3">
+        <div className="w-full mx-10 md:w-3/5">
           <AnimatedText text={sentence} />
         </div>
       </div>
@@ -109,6 +112,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

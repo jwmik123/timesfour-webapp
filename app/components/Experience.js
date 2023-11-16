@@ -1,19 +1,17 @@
 "use client";
-import { motion } from "framer-motion";
 import { Float } from "@react-three/drei";
 
 import { Brush } from "./three/Brush";
 import { Screen } from "./three/Screen";
 import { Clapper } from "./three/Clapper";
 import { Speaker } from "./three/Speaker";
-
-const itemVariants = {
-  initial: { opacity: 0, scale: 0.95 },
-  animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 1.05 },
-};
+import {DoubleSide, MeshToonMaterial} from "three";
 
 export const Experience = ({ activeItem }) => {
+
+    const material = new MeshToonMaterial();
+    material.side = DoubleSide;
+
   return (
     <>
       <ambientLight intensity={0.5} />
@@ -23,24 +21,21 @@ export const Experience = ({ activeItem }) => {
         color={"white"}
       />
       <Float floatIntensity={2} speed={2}>
-        <motion.group
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={itemVariants}
-        >
+        <group>
           {activeItem === "Development" && (
             <Screen
               scale={3}
               rotation={[Math.PI * 1.4, 0, 0]}
               position={[0, -1, 0]}
+              material={material}
             />
           )}
           {activeItem === "Design" && (
             <Brush
               scale={0.5}
-              rotation={[Math.PI * 0, 0, 0]}
+              rotation={[0, 0, 0]}
               position={[1.5, 2, 0]}
+              material={material}
             />
           )}
           {activeItem === "Marketing" && (
@@ -48,12 +43,13 @@ export const Experience = ({ activeItem }) => {
               scale={1}
               rotation={[Math.PI * 1.4, 0, 0]}
               position={[-2, -1, 0]}
+              material={material}
             />
           )}
           {activeItem === "Film" && (
-            <Clapper scale={2} rotation={[Math.PI * 1.4, 0, 0]} />
+            <Clapper scale={2} rotation={[Math.PI * 1.4, 0, 0]} material={material} />
           )}
-        </motion.group>
+        </group>
       </Float>
     </>
   );

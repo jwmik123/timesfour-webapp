@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 const navData = [
     {title: "Home", link: "/"},
@@ -28,17 +28,19 @@ export const Navigation = ({ font }) => {
         height: 40,
         right: "0px",
         top: "0px",
-        transition: {duration: .5, ease: [.76,0,.24,1]}
+        transition: {duration: .5, delay: .35, ease: [.76,0,.24,1]}
     }
   }
 
   const perspective = {
         initial: {
             opacity: 0,
+            rotateX: 90,
         },
       enter: (index) => ({
-            opacity: 1,
-          transition: {delay: .5 + index *.1}
+          opacity: 1,
+          rotateX: 0,
+          transition: {delay: .3 + (index *.1), duration: .5, ease: [.76,0,.24,1]}
       }),
       exit: {
             opacity: 0,
@@ -64,25 +66,29 @@ export const Navigation = ({ font }) => {
                       variants={variants}
                       initial={"closed"}
                       animate={isActive ? "open" : "closed"}>
+                      <AnimatePresence>
                       {isActive &&
                           <nav className={"h-full pt-[100px] pl-[40px] pb-[50px] pr-[40px] box-border"}>
                               <ul className={"text-black flex flex-col gap-5"}>
                                   {navData.map((item, index) => (
-                                      <motion.li
-                                          key={index}
-                                          className={"text-5xl font-medium"}
-                                          custom={index}
-                                          variants={perspective}
-                                          animate={"enter"}
-                                          exit={"exit"}
-                                          initial={"initial"}
-                                      >
-                                          <Link href={item.link}>{item.title}</Link>
-                                      </motion.li>
+                                      <div key={index} className={"perspective-[120px]"}>
+                                          <motion.li
+
+                                              className={"text-5xl font-medium"}
+                                              custom={index}
+                                              variants={perspective}
+                                              animate={"enter"}
+                                              exit={"exit"}
+                                              initial={"initial"}
+                                          >
+                                              <Link href={item.link}>{item.title}</Link>
+                                          </motion.li>
+                                      </div>
                                   ))}
                               </ul>
                           </nav>
                       }
+                      </AnimatePresence>
                       <button
                           onClick={() => setActive(!isActive)}
                           className={`absolute font-medium ${isActive ? "mr-[25px] mt-[25px] bg-white text-black" : "m-0 bg-yellow text-black"} top-0 right-0 w-[100px] h-[40px] text-sm rounded-2xl

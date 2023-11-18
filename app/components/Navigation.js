@@ -6,8 +6,15 @@ import {AnimatePresence, motion} from "framer-motion";
 const navData = [
     {title: "Home", link: "/"},
     {title: "Projecten", link: "/projects"},
-    {title: "Over X4", link: "/about"},
+    {title: "Agency", link: "/about"},
+    {title: "Vacatures", link: "/vacancies"},
     {title: "Contact", link: "/contact"},
+]
+const footerData = [
+    {title: "Instagram", link: "/"},
+    {title: "LinkedIn", link: "/"},
+    {title: "TikTok", link: "/"},
+    {title: "Twitter", link: "/"},
 ]
 
 export const Navigation = ({ font }) => {
@@ -47,6 +54,21 @@ export const Navigation = ({ font }) => {
       }
   }
 
+    const slideIn = {
+        initial: {
+            opacity: 0,
+            y: 20,
+        },
+        enter: (index) => ({
+            opacity: 1,
+            y:0,
+            transition: {delay: .3 + (index *.1), duration: .5, ease: [.76,0,.24,1]}
+        }),
+        exit: {
+            opacity: 0,
+        }
+    }
+
   return (
       <div className={"fixed w-full z-50"}>
           <div className="flex justify-between py-10 px-10">
@@ -68,12 +90,11 @@ export const Navigation = ({ font }) => {
                       animate={isActive ? "open" : "closed"}>
                       <AnimatePresence>
                       {isActive &&
-                          <nav className={"h-full pt-[100px] pl-[40px] pb-[50px] pr-[40px] box-border"}>
+                          <nav className={"h-full pt-[120px] pl-[40px] pb-[50px] pr-[40px] box-border flex flex-col justify-between"}>
                               <ul className={"text-black flex flex-col gap-5"}>
                                   {navData.map((item, index) => (
                                       <div key={index} className={"perspective-[120px]"}>
                                           <motion.li
-
                                               className={"text-5xl font-medium"}
                                               custom={index}
                                               variants={perspective}
@@ -86,6 +107,23 @@ export const Navigation = ({ font }) => {
                                       </div>
                                   ))}
                               </ul>
+
+                              <div className={"text-black flex flex-wrap pt-10"}>
+                                  {footerData.map((item, index) => (
+                                        <motion.a
+                                            href={item.link}
+                                            key={index}
+                                            variants={slideIn}
+                                            custom={index}
+                                            animate={"enter"}
+                                            exit={"exit"}
+                                            initial={"initial"}
+                                            className={"w-1/2"}
+                                        >
+                                            {item.title}
+                                        </motion.a>
+                                  ))}
+                              </div>
                           </nav>
                       }
                       </AnimatePresence>

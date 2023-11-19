@@ -1,7 +1,10 @@
+import {Navigation} from "@/app/components/Navigation";
+import {Bebas_Neue} from "next/font/google";
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 export default function Projects() {
   return (
-    <div className="mx-10">
-      <h1>projectjes</h1>
-    </div>
+    <>
+        <Navigation font={bebas} />
+    </>
   );
 }

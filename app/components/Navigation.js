@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navData = [
     {title: "Home", link: "/"},
@@ -21,6 +22,7 @@ export const Navigation = ({ font }) => {
   const bebas = font.className;
   const [hovered, setHovered] = useState(false);
   const [isActive, setActive] = useState(false);
+  const pathname = usePathname();
 
   const variants = {
     open: {
@@ -38,7 +40,6 @@ export const Navigation = ({ font }) => {
         transition: {duration: .5, delay: .35, ease: [.76,0,.24,1]}
     }
   }
-
   const perspective = {
         initial: {
             opacity: 0,
@@ -53,8 +54,7 @@ export const Navigation = ({ font }) => {
             opacity: 0,
       }
   }
-
-    const slideIn = {
+  const slideIn = {
         initial: {
             opacity: 0,
             y: 20,
@@ -95,7 +95,7 @@ export const Navigation = ({ font }) => {
                                   {navData.map((item, index) => (
                                       <div key={index} className={"perspective-[120px]"}>
                                           <motion.li
-                                              className={"text-5xl font-medium"}
+                                              className={`text-5xl font-medium ${pathname === item.link ? "ml-10 list-disc" : ""}`}
                                               custom={index}
                                               variants={perspective}
                                               animate={"enter"}
@@ -118,7 +118,7 @@ export const Navigation = ({ font }) => {
                                             animate={"enter"}
                                             exit={"exit"}
                                             initial={"initial"}
-                                            className={"w-1/2"}
+                                            className={"w-1/2 pt-2 link"}
                                         >
                                             {item.title}
                                         </motion.a>
@@ -129,11 +129,13 @@ export const Navigation = ({ font }) => {
                       </AnimatePresence>
                       <button
                           onClick={() => setActive(!isActive)}
-                          className={`absolute font-medium ${isActive ? "mr-[25px] mt-[25px] bg-white text-black" : "m-0 bg-yellow text-black"} top-0 right-0 w-[100px] h-[40px] text-sm rounded-2xl
-                                transition-all duration-100`}>
+                          className={`absolute font-medium
+                            ${isActive ? "mr-[25px] mt-[25px] bg-transparent text-black border-2 border-black" : "m-0 bg-yellow text-black"} 
+                            top-0 right-0 w-[100px] h-[40px] text-sm rounded-2xl transition-all duration-100`}>
                           {isActive ? "CLOSE" : "MENU"}
                       </button>
                   </motion.div>
+
               </div>
           </div>
       </div>

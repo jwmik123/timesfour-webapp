@@ -1,10 +1,34 @@
+"use client";
 import Link from "next/link";
 
+import {gsap} from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {useEffect} from "react";
+
 export default function Footer() {
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo("#Laag_2 > *",
+    { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "none",
+          stagger: 0.2,
+          duration: 1,
+          scrollTrigger: {
+            trigger: "#Laag_2",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+          }
+        }
+    );
+  }, []);
+
   return (
-    // mt-[8.3vw]
     <footer className=" text-black bg-[#EFEFEF] mt-20 rounded-2xl">
-      {/* bottom-0 top-[100%] translate-y-[-100%] mb-[-200%] */}
       <div className="sticky">
         <div>
           <div className="flex px-10 mb-10">
@@ -110,17 +134,20 @@ export default function Footer() {
                 className="cls-1"
                 points="269 80.8 301 80.8 301 60.4 269 60.4 269 22 307.19 22 307.19 1.6 245.8 1.6 245.8 100.31 269 100.31 269 80.8"
               />
-              <rect
-                className="cls-1"
-                x="320.2"
-                y="89.6"
-                width="22.8"
-                height="10.71"
-              />
-              <path
-                className="cls-1"
-                d="m389.8,93.8c0-15-8-21.2-21.4-28.8l-16.4-9.2c-6.6-3.8-9-7-9-14.2v-9.6c0-8.8,5-12,11.8-12s11.8,3.2,11.8,12v19.6h22.8v-22.8c0-20.8-15.2-28.8-34.4-28.8h-.4c-19.2,0-34.4,8-34.4,28.8v18.4c0,14.6,7.8,21,21.4,28.8l16.2,9.2c7,3.8,9.2,7.4,9.2,14.6v.51h22.8v-6.51Z"
-              />
+              <g>
+                <rect
+                    className="cls-1"
+                    x="320.2"
+                    y="89.6"
+                    width="22.8"
+                    height="10.71"
+                />
+                <path
+                    className="cls-1"
+                    d="m389.8,93.8c0-15-8-21.2-21.4-28.8l-16.4-9.2c-6.6-3.8-9-7-9-14.2v-9.6c0-8.8,5-12,11.8-12s11.8,3.2,11.8,12v19.6h22.8v-22.8c0-20.8-15.2-28.8-34.4-28.8h-.4c-19.2,0-34.4,8-34.4,28.8v18.4c0,14.6,7.8,21,21.4,28.8l16.2,9.2c7,3.8,9.2,7.4,9.2,14.6v.51h22.8v-6.51Z"
+                />
+              </g>
+
               <polygon
                 className="cls-1"
                 points="461.79 81.8 492.99 81.8 492.99 61.4 461.79 61.4 461.79 22 499.19 22 499.19 1.6 438.59 1.6 438.59 100.31 461.79 100.31 461.79 81.8"
@@ -129,20 +156,22 @@ export default function Footer() {
                 className="cls-1"
                 d="m534.79,33.2c0-10,5.2-12.8,12.8-12.8s12.8,2.8,12.8,12.8v67.11h23.2V29.6c0-21.2-14-29.6-35.2-29.6h-1.6c-21.2,0-35.2,8.2-35.2,29.6v70.71h23.2V33.2Z"
               />
+              <g>
+                <rect
+                    className="cls-1"
+                    x="602.39"
+                    y="1.6"
+                    width="23.2"
+                    height="98.71"
+                />
               <rect
-                className="cls-1"
-                x="602.39"
-                y="1.6"
-                width="23.2"
-                height="98.71"
+                  className="cls-1"
+                  x="649.59"
+                  y="1.6"
+                  width="23.2"
+                  height="98.71"
               />
-              <rect
-                className="cls-1"
-                x="649.59"
-                y="1.6"
-                width="23.2"
-                height="98.71"
-              />
+              </g>
               <path
                 className="cls-1"
                 d="m715.59,85.8h11.6l4.63,14.51h22.87l-6.1-18.11c9.6-4.2,15.2-12.6,15.2-26v-25c0-21.2-14-29.6-35.2-29.6h-36.2v98.71h23.2v-14.51Zm0-63.8h12.2c7.6,0,12.8,2.8,12.8,12.8v18.2c0,10-5.2,12.8-12.8,12.8h-12.2V22Z"

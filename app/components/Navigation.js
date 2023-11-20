@@ -89,53 +89,54 @@ export const Navigation = ({ font }) => {
                       initial={"closed"}
                       animate={isActive ? "open" : "closed"}>
                       <AnimatePresence>
-                      {isActive &&
-                          <nav className={"h-full pt-[120px] pl-[40px] pb-[50px] pr-[40px] box-border flex flex-col justify-between"}>
-                              <ul className={"text-black flex flex-col gap-5"}>
-                                  {navData.map((item, index) => (
-                                      <div key={index} className={"perspective-[120px]"}>
-                                          <motion.li
-                                              className={`text-5xl font-medium ${pathname === item.link ? "ml-10 list-disc" : ""}`}
-                                              custom={index}
-                                              variants={perspective}
-                                              animate={"enter"}
-                                              exit={"exit"}
-                                              initial={"initial"}
-                                          >
-                                              <Link href={item.link}>{item.title}</Link>
-                                          </motion.li>
-                                      </div>
-                                  ))}
-                              </ul>
+                          {isActive &&
+                              <nav className={"h-full pt-[120px] pl-[40px] pb-[50px] pr-[40px] box-border flex flex-col justify-between"}>
+                                  <ul className={"text-black flex flex-col gap-5"}>
+                                      {navData.map((item, index) => (
+                                          <div key={index} className={"perspective-[120px]"}>
+                                              <motion.li
+                                                  className={`text-5xl font-medium ${pathname === item.link ? "ml-10 list-disc" : ""}`}
+                                                  custom={index}
+                                                  variants={perspective}
+                                                  animate={"enter"}
+                                                  exit={"exit"}
+                                                  initial={"initial"}
+                                              >
+                                                  <Link href={item.link}>{item.title}</Link>
+                                              </motion.li>
+                                          </div>
+                                      ))}
+                                  </ul>
 
-                              <div className={"text-black flex flex-wrap pt-10"}>
-                                  {footerData.map((item, index) => (
-                                        <motion.a
-                                            href={item.link}
-                                            key={index}
-                                            variants={slideIn}
-                                            custom={index}
-                                            animate={"enter"}
-                                            exit={"exit"}
-                                            initial={"initial"}
-                                            className={"w-1/2 pt-2 link"}
-                                        >
-                                            {item.title}
-                                        </motion.a>
-                                  ))}
-                              </div>
-                          </nav>
-                      }
+                                  <div className={"text-black flex flex-wrap pt-10"}>
+                                      {footerData.map((item, index) => (
+                                            <motion.a
+                                                href={item.link}
+                                                key={index}
+                                                variants={slideIn}
+                                                custom={index}
+                                                animate={"enter"}
+                                                exit={"exit"}
+                                                initial={"initial"}
+                                                className={"w-1/2 pt-2 link"}
+                                            >
+                                                {item.title}
+                                            </motion.a>
+                                      ))}
+                                  </div>
+                              </nav>
+                          }
                       </AnimatePresence>
                       <button
                           onClick={() => setActive(!isActive)}
-                          className={`absolute font-medium
-                            ${isActive ? "mr-[25px] mt-[25px] bg-transparent text-black border-2 border-black" : "m-0 bg-yellow text-black"} 
-                            top-0 right-0 w-[100px] h-[40px] text-sm rounded-2xl transition-all duration-100`}>
+                          className={`${ isActive ? 
+                              "mr-[25px] mt-[25px] bg-transparent text-black border-2 border-black" : 
+                              "m-0 bg-yellow text-black" }
+                              absolute font-medium top-0 right-0 w-[100px] h-[40px] 
+                              text-sm rounded-2xl transition-all duration-100`}>
                           {isActive ? "CLOSE" : "MENU"}
                       </button>
                   </motion.div>
-
               </div>
           </div>
       </div>

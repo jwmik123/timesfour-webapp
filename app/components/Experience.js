@@ -5,11 +5,11 @@ import { Brush } from "./three/Brush";
 import { Screen } from "./three/Screen";
 import { Clapper } from "./three/Clapper";
 import { Speaker } from "./three/Speaker";
-import {DoubleSide, MeshToonMaterial} from "three";
+import {DoubleSide, MeshStandardMaterial, MeshToonMaterial} from "three";
 
 export const Experience = ({ activeItem }) => {
 
-    const material = new MeshToonMaterial();
+    const material = new MeshStandardMaterial({wireframe: true});
     material.side = DoubleSide;
 
   return (

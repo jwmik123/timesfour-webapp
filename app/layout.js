@@ -1,10 +1,9 @@
-import { Navigation } from "@/app/components/Navigation";
 import { Inter } from "next/font/google";
-import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/components/Footer";
-import { Suspense } from "react";
+import {Suspense} from "react";
 import Loading from "./loading";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +22,11 @@ export default function RootLayout({ children }) {
         className={`${inter.className} overflow-hidden selection:bg-yellow-400`}
       >
         <Suspense fallback={<Loading />}>
-          <div className="min-h-screen bg-black rounded-br-3xl rounded-bl-3xl">
+          <div className="min-h-screen bg-black content-slide rounded-br-3xl rounded-bl-3xl">
 
             {children}
           </div>
-          <Footer />
+            <Footer/>
         </Suspense>
       </body>
     </html>

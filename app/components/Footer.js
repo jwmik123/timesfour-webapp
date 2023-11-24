@@ -1,19 +1,22 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {useEffect} from "react";
 
-export default function Footer() {
+export default function Footer({}) {
+
+  const footerRef = useRef(null);
 
   useEffect(() => {
+    const height = footerRef.current.getBoundingClientRect().height;
+    // onHeightChange(height);
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo("#Laag_2 > *",
-    { y: 50, opacity: 0 },
+    { y: 50 },
         {
           y: 0,
-          opacity: 1,
           ease: "none",
           stagger: 0.2,
           duration: 1,
@@ -28,7 +31,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className=" text-black bg-[#EFEFEF] mt-20 rounded-2xl">
+    <footer ref={footerRef} className="text-black bg-[#EFEFEF] mt-20  rounded-2xl bottom-0 w-full -z-10">
       <div className="sticky">
         <div>
           <div className="flex px-10 mb-10">
@@ -44,9 +47,9 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <div className="flex justify-between w-full text-gray-600 md:w-1/2 felx-col">
+            <div className="flex justify-between w-full text-gray-600 md:w-1/2">
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black ">Legal</h3>
+                <h3 className="text-2xl text-black">Legal</h3>
                 <ul>
                   <li>
                     <Link
@@ -66,7 +69,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black ">Legal</h3>
+                <h3 className="text-2xl text-black">Legal</h3>
                 <ul>
                   <li>
                     <Link
@@ -86,7 +89,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black ">Legal</h3>
+                <h3 className="text-2xl text-black">Legal</h3>
                 <ul>
                   <li>
                     <Link

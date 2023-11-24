@@ -1,10 +1,11 @@
 "use client";
-import { useState, useCallback } from "react";
+import {useState, useCallback, Suspense} from "react";
 import { gsap } from "gsap";
 import { Canvas } from "@react-three/fiber";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Experience } from "./Experience";
+import Loading from "@/app/loading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +29,7 @@ export default function Masthead() {
 
   return (
     <div className="relative mx-10 min-h-[100vh]">
+      <Suspense fallback={<Loading />}>
       <Canvas
         shadows
         camera={{ position: [5, 5, 5], fov: 55 }}
@@ -35,6 +37,7 @@ export default function Masthead() {
       >
         <Experience activeItem={hoveredItem} />
       </Canvas>
+      </Suspense>
       <div
         style={{ userSelect: "none" }}
         className={`absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full justify-center h-full py-5 cursor-default`}

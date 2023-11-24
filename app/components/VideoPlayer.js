@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,23 +14,25 @@ export default function VideoPlayer() {
       scrollTrigger: {
         trigger: outerRef.current,
         scrub: true,
-        start: "top 100%",
-        end: "bottom 60%",
+        start: "top center",
+        end: "bottom bottom",
       },
     });
     timeline
-      .from(videoRef.current, {
-        clipPath: "inset(100%)",
+      .fromTo(videoRef.current, {
+        width: "100%",
+        borderRadius: "0",
         ease: "power1.out",
-        duration: 2,
+      },{
+        width: "70%",
+        borderRadius: "25px",
       })
-      .to(videoRef.current, { clipPath: "inset(0%)" });
   }, []);
 
   return (
     <div
       ref={outerRef}
-      className="relative flex items-center justify-center w-full overflow-hidden"
+      className="relative flex items-center justify-center w-full overflow-hidden aspect-video"
     >
       <div className="absolute z-10 w-full bg-black opacity-0 aspect-video"></div>
       <video
@@ -41,7 +43,6 @@ export default function VideoPlayer() {
         muted
         playsInline
       >
-        {/* <source src="https://mik-development.s3.eu-central-1.amazonaws.com/murseeheader.mp4" /> */}
         <source src="https://mik-development.s3.eu-central-1.amazonaws.com/placeholder-x4+(1080p).mp4" />
       </video>
     </div>

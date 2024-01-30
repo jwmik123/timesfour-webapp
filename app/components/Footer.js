@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Footer({}) {
-
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -13,30 +12,34 @@ export default function Footer({}) {
     // onHeightChange(height);
 
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo("#Laag_2 > *",
-    { y: 50 },
-        {
-          y: 0,
-          ease: "none",
-          stagger: 0.2,
-          duration: 1,
-          scrollTrigger: {
-            trigger: "#Laag_2",
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-          }
-        }
+    gsap.fromTo(
+      "#Laag_2 > *",
+      { y: 50 },
+      {
+        y: 0,
+        ease: "none",
+        stagger: 0.2,
+        duration: 1,
+        scrollTrigger: {
+          trigger: "#Laag_2",
+          start: "top bottom",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      },
     );
   }, []);
 
   return (
-    <footer ref={footerRef} className="text-black bg-[#EFEFEF] mt-20  rounded-2xl bottom-0 w-full -z-10">
+    <footer
+      ref={footerRef}
+      className="bg-cutty text-tasman bottom-0 -z-10 mt-20 w-full rounded-2xl"
+    >
       <div className="sticky">
         <div>
-          <div className="flex px-10 mb-10">
+          <div className="mb-10 flex px-10">
             <div className="w-full md:w-1/2">
-              <h3 className="text-2xl text-black">Times Four</h3>
+              <h3 className="text-2xl text-white">Times Four</h3>
               <div>
                 <p>John M. Keynesplein 12-46, Amsterdam</p>
                 <p>
@@ -47,20 +50,20 @@ export default function Footer({}) {
                 </p>
               </div>
             </div>
-            <div className="flex justify-between w-full text-gray-600 md:w-1/2">
+            <div className="flex w-full justify-between text-gray-600 md:w-1/2">
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Legal</h3>
-                <ul>
+                <h3 className="text-2xl text-white">Legal</h3>
+                <ul className="text-tasman">
                   <li>
                     <Link
                       href="/privacy-policy"
-                      className="relative block link"
+                      className="link relative block"
                     >
                       <span alt="Privacy Policy">Privacy Policy</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="relative block link nav-link">
+                    <Link href="#" className="link nav-link relative block">
                       <span alt="Terms &amp; Conditions">
                         Terms &amp; Conditions
                       </span>
@@ -69,18 +72,18 @@ export default function Footer({}) {
                 </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Legal</h3>
-                <ul>
+                <h3 className="text-2xl text-white">Legal</h3>
+                <ul className="text-tasman">
                   <li>
                     <Link
                       href="/privacy-policy"
-                      className="relative block link"
+                      className="link relative block"
                     >
                       <span alt="Privacy Policy">Privacy Policy</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="relative block link nav-link">
+                    <Link href="#" className="link nav-link relative block">
                       <span alt="Terms &amp; Conditions">
                         Terms &amp; Conditions
                       </span>
@@ -89,18 +92,18 @@ export default function Footer({}) {
                 </ul>
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="text-2xl text-black">Legal</h3>
-                <ul>
+                <h3 className="text-2xl text-white">Legal</h3>
+                <ul className="text-tasman">
                   <li>
                     <Link
                       href="/privacy-policy"
-                      className="relative block link"
+                      className="link relative block"
                     >
                       <span alt="Privacy Policy">Privacy Policy</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="relative block link nav-link">
+                    <Link href="#" className="link nav-link relative block">
                       <span alt="Terms &amp; Conditions">
                         Terms &amp; Conditions
                       </span>
@@ -117,6 +120,7 @@ export default function Footer({}) {
               data-name="Laag 2"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 763.79 100.31"
+              fill="#cad2c5"
             >
               <polygon
                 className="cls-1"
@@ -139,15 +143,15 @@ export default function Footer({}) {
               />
               <g>
                 <rect
-                    className="cls-1"
-                    x="320.2"
-                    y="89.6"
-                    width="22.8"
-                    height="10.71"
+                  className="cls-1"
+                  x="320.2"
+                  y="89.6"
+                  width="22.8"
+                  height="10.71"
                 />
                 <path
-                    className="cls-1"
-                    d="m389.8,93.8c0-15-8-21.2-21.4-28.8l-16.4-9.2c-6.6-3.8-9-7-9-14.2v-9.6c0-8.8,5-12,11.8-12s11.8,3.2,11.8,12v19.6h22.8v-22.8c0-20.8-15.2-28.8-34.4-28.8h-.4c-19.2,0-34.4,8-34.4,28.8v18.4c0,14.6,7.8,21,21.4,28.8l16.2,9.2c7,3.8,9.2,7.4,9.2,14.6v.51h22.8v-6.51Z"
+                  className="cls-1"
+                  d="m389.8,93.8c0-15-8-21.2-21.4-28.8l-16.4-9.2c-6.6-3.8-9-7-9-14.2v-9.6c0-8.8,5-12,11.8-12s11.8,3.2,11.8,12v19.6h22.8v-22.8c0-20.8-15.2-28.8-34.4-28.8h-.4c-19.2,0-34.4,8-34.4,28.8v18.4c0,14.6,7.8,21,21.4,28.8l16.2,9.2c7,3.8,9.2,7.4,9.2,14.6v.51h22.8v-6.51Z"
                 />
               </g>
 
@@ -161,19 +165,19 @@ export default function Footer({}) {
               />
               <g>
                 <rect
-                    className="cls-1"
-                    x="602.39"
-                    y="1.6"
-                    width="23.2"
-                    height="98.71"
+                  className="cls-1"
+                  x="602.39"
+                  y="1.6"
+                  width="23.2"
+                  height="98.71"
                 />
-              <rect
+                <rect
                   className="cls-1"
                   x="649.59"
                   y="1.6"
                   width="23.2"
                   height="98.71"
-              />
+                />
               </g>
               <path
                 className="cls-1"

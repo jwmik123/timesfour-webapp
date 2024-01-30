@@ -5,18 +5,17 @@ import { Brush } from "./three/Brush";
 import { Screen } from "./three/Screen";
 import { Clapper } from "./three/Clapper";
 import { Speaker } from "./three/Speaker";
-import {DoubleSide, MeshStandardMaterial, MeshToonMaterial} from "three";
+import { DoubleSide, MeshStandardMaterial, MeshToonMaterial } from "three";
 
 export const Experience = ({ activeItem }) => {
-
-    const material = new MeshStandardMaterial({wireframe: true});
-    material.side = DoubleSide;
+  const material = new MeshStandardMaterial({ wireframe: true });
+  material.side = DoubleSide;
 
   return (
     <>
       <ambientLight intensity={0.5} />
       <directionalLight
-        position={[0, 5, 5]} // Adjust the position to shine from top left
+        position={[0, 10, 10]} // Adjust the position to shine from top left
         intensity={2}
         color={"white"}
       />
@@ -47,7 +46,11 @@ export const Experience = ({ activeItem }) => {
             />
           )}
           {activeItem === "Film" && (
-            <Clapper scale={2} rotation={[Math.PI * 1.4, 0, 0]} material={material} />
+            <Clapper
+              scale={2}
+              rotation={[Math.PI * 1.4, 0, 0]}
+              material={material}
+            />
           )}
         </group>
       </Float>

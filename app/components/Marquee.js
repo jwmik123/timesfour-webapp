@@ -48,11 +48,15 @@ const Marquee = () => {
                 top: el.offsetTop,
                 left:
                   el.offsetLeft + (reverse ? -el.offsetWidth : el.offsetWidth),
-              })
+              }),
             );
         positionClones();
         elements.forEach((el, i) =>
-          tl.to([el, clones[i]], { xPercent: reverse ? 100 : -100, ...vars }, 0)
+          tl.to(
+            [el, clones[i]],
+            { xPercent: reverse ? 100 : -100, ...vars },
+            0,
+          ),
         );
         window.addEventListener("resize", () => {
           let time = tl.totalTime();
@@ -67,12 +71,12 @@ const Marquee = () => {
 
   return (
     <div
-      className={`relative flex text-6xl text-black bg-yellow-400 marquee font-rift font-semibold overflow-hidden`}
+      className={`bg-tasman marquee font-rift relative flex overflow-hidden text-6xl font-semibold text-black`}
       ref={marqueeRef}
     >
-      <ul className="relative flex items-center marquee-inner-wrap">
-        <li className="relative flex items-center single-marquee-part">
-          <h3 className="bottom-0 flex items-center gap-5 py-5 ml-5 big whitespace-nowrap">
+      <ul className="marquee-inner-wrap relative flex items-center">
+        <li className="single-marquee-part relative flex items-center">
+          <h3 className="big bottom-0 ml-5 flex items-center gap-5 whitespace-nowrap py-5">
             Time for film
             <svg
               width="24"
@@ -95,8 +99,8 @@ const Marquee = () => {
             </svg>
           </h3>
         </li>
-        <li className="relative flex items-center single-marquee-part">
-          <h3 className="flex items-center gap-5 py-5 ml-5 big whitespace-nowrap">
+        <li className="single-marquee-part relative flex items-center">
+          <h3 className="big ml-5 flex items-center gap-5 whitespace-nowrap py-5">
             Time for Marketing
             <svg
               width="24"
@@ -119,8 +123,8 @@ const Marquee = () => {
             </svg>
           </h3>
         </li>
-        <li className="relative flex items-center single-marquee-part">
-          <h3 className="flex items-center gap-5 py-5 ml-5 big whitespace-nowrap">
+        <li className="single-marquee-part relative flex items-center">
+          <h3 className="big ml-5 flex items-center gap-5 whitespace-nowrap py-5">
             Time for Development
             <svg
               width="24"
@@ -143,8 +147,8 @@ const Marquee = () => {
             </svg>
           </h3>
         </li>
-        <li className="relative flex items-center single-marquee-part">
-          <h3 className="flex items-center gap-5 py-5 ml-5 big whitespace-nowrap">
+        <li className="single-marquee-part relative flex items-center">
+          <h3 className="big ml-5 flex items-center gap-5 whitespace-nowrap py-5">
             Time for design
             <svg
               width="24"

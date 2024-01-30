@@ -14,6 +14,10 @@ module.exports = {
         yellow: {
           400: "#FFDF00",
         },
+        spruce: "#1d292f",
+        diana: "#354f52",
+        cutty: "#52796f",
+        tasman: "#cad2c5",
         black: "#141414",
       },
       backgroundImage: {
@@ -29,7 +33,7 @@ module.exports = {
           "0%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0)" },
         },
-      }
+      },
     },
   },
   plugins: [],

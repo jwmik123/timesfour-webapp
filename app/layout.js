@@ -1,15 +1,14 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/components/Footer";
-import {Suspense} from "react";
+import { Suspense } from "react";
 import Loading from "./loading";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Times Four - Creative Studio",
-  description: "Your company times four.",
+  description: "Where brands bloom in the garden of tomorrow.",
 };
 
 export default function RootLayout({ children }) {
@@ -19,14 +18,13 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/sxa0vqz.css" />
       </head>
       <body
-        className={`${inter.className} overflow-hidden selection:bg-yellow-400`}
+        className={`${inter.className} overflow-hidden selection:bg-yellow-300`}
       >
         <Suspense fallback={<Loading />}>
-          <div className="min-h-screen bg-black content-slide rounded-br-3xl rounded-bl-3xl">
-
+          <div className="bg-spruce content-slide min-h-screen rounded-bl-3xl rounded-br-3xl">
             {children}
           </div>
-            <Footer/>
+          <Footer />
         </Suspense>
       </body>
     </html>

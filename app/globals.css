@@ -45,6 +45,7 @@ footer .link span:hover::after {
     width: 100%;
 }
 
+/* Grain from https://mrboost.nl/ */
 w-embed::before {
     content: " ";
     grid-area: 1 / 1 / 2 / 2;

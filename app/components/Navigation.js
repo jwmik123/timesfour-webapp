@@ -92,7 +92,9 @@ export const Navigation = ({ font }) => {
         </div>
         <div className={"relative"}>
           <motion.div
-            className={"menu bg-tasman absolute right-0 top-0 z-50 rounded-2xl"}
+            className={
+              "menu absolute right-0 top-0 z-50 rounded-2xl bg-green-300"
+            }
             variants={variants}
             initial={"closed"}
             animate={isActive ? "open" : "closed"}

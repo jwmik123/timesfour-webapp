@@ -26,6 +26,8 @@ export default function RootLayout({ children }) {
           </div>
           <Footer />
         </Suspense>
+
+        <div className="bg-grain w-embed" />
       </body>
     </html>
   );

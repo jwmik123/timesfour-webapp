@@ -24,58 +24,59 @@ export default function Masthead() {
   };
   const setHoveredItemDebounced = useCallback(
     debounce(setHoveredItem, 150),
-    []
+    [],
   );
 
   return (
-    <div className="relative mx-10 min-h-[100vh]">
+    <div className="relative mx-10 h-[100vh]">
       <Suspense fallback={<Loading />}>
         <Canvas
           shadows
-          camera={{ position: [5, 5, 5], fov: 55 }}
-          className="relative w-full pt-32 aspect-video"
+          camera={{ position: [5, 2, 5], fov: 75 }}
+          className="relative aspect-video w-full"
         >
           <Experience activeItem={hoveredItem} />
         </Canvas>
+
+        <div
+          style={{ userSelect: "none" }}
+          className={`font-rift absolute top-0 flex h-full w-full cursor-default flex-col justify-center py-5 text-[15vw] font-semibold leading-[14vw]`}
+        >
+          <div className="flex justify-between">
+            <span>times</span>
+            <span
+              onMouseEnter={() => setHoveredItemDebounced("Marketing")}
+              className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100"
+            >
+              marketing
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span
+              onMouseEnter={() => setHoveredItemDebounced("Design")}
+              className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100"
+            >
+              design
+            </span>
+            <span>four</span>
+            <span
+              onMouseEnter={() => setHoveredItemDebounced("Film")}
+              className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100"
+            >
+              film
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>x4</span>
+            <span
+              onMouseEnter={() => setHoveredItemDebounced("Development")}
+              className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100"
+            >
+              development
+            </span>
+          </div>
+        </div>
       </Suspense>
-      <div
-        style={{ userSelect: "none" }}
-        className={`absolute top-0 font-rift font-semibold leading-[14vw] text-[15vw] flex flex-col w-full justify-center h-full py-5 cursor-default`}
-      >
-        <div className="flex justify-between">
-          <span>times</span>
-          <span
-            onMouseEnter={() => setHoveredItemDebounced("Marketing")}
-            className="transition-all duration-300 opacity-20 hover:opacity-100 hover:text-green-300"
-          >
-            marketing
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span
-            onMouseEnter={() => setHoveredItemDebounced("Design")}
-            className="transition-all duration-300 opacity-20 hover:opacity-100 hover:text-green-300"
-          >
-            design
-          </span>
-          <span>four</span>
-          <span
-            onMouseEnter={() => setHoveredItemDebounced("Film")}
-            className="transition-all duration-300 opacity-20 hover:opacity-100 hover:text-green-300"
-          >
-            film
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span>x4</span>
-          <span
-            onMouseEnter={() => setHoveredItemDebounced("Development")}
-            className="transition-all duration-300 opacity-20 hover:opacity-100 hover:text-green-300"
-          >
-            development
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

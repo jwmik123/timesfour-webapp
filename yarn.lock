@@ -239,6 +239,18 @@
     suspend-react "^0.1.3"
     zustand "^3.7.1"
 
+"@splinetool/loader@^1.0.48":
+  version "1.0.48"
+  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-1.0.48.tgz#674865493641b267b4f2bf2624195b5e1fc35665"
+  integrity sha512-GpfadTlIx9bx3QopdBy9cfymQFM6P8klqgCiU5AxV6fN06ViDr+T+tPg2vrH+DE3Fhnkta6a14zE1ZXXAXq7og==
+  dependencies:
+    semver-compare "^1.0.0"
+
+"@splinetool/r3f-spline@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@splinetool/r3f-spline/-/r3f-spline-1.0.2.tgz#557b09815ec11d4695ecd9a8fb0f34915d985b2c"
+  integrity sha512-Fl1qboRpTE8yJm4BAe1l6j3Xgh3HwIzvtdX2LjCpBiSo21+j0b2rilJpLHfsXJndrq4Hegz6oEUKlPvVWumaHg==
+
 "@studio-freight/lenis@^1.0.19":
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.19.tgz#6fd5c60f37226a27862cf036503d4a41f4c34fca"
@@ -1243,6 +1255,11 @@ screenfull@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-5.2.0.tgz#6533d524d30621fc1283b9692146f3f13a93d1ba"
   integrity sha512-9BakfsO2aUQN2K9Fdbj87RJIEZ82Q9IGim7FqM5OsebfoFC6ZHXgDq/KvniuLTPdeM8wY2o6Dj3WQ7KeQCj3cA==
+
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
+  integrity sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow==
 
 set-harmonic-interval@^1.0.1:
   version "1.0.1"

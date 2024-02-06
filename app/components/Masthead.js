@@ -4,7 +4,8 @@ import { gsap } from "gsap";
 import { Canvas } from "@react-three/fiber";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { Experience } from "./Experience";
+// import { Experience } from "./Experience";
+import TimesFour from "./TimesFour";
 import Loading from "@/app/loading";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,7 +36,8 @@ export default function Masthead() {
           camera={{ position: [5, 2, 5], fov: 75 }}
           className="relative aspect-video w-full"
         >
-          <Experience activeItem={hoveredItem} />
+          {/* <Experience activeItem={hoveredItem} /> */}
+          <TimesFour />
         </Canvas>
 
         <div

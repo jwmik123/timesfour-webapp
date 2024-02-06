@@ -37,9 +37,15 @@ export default function Masthead() {
           className="relative aspect-video w-full"
         >
           {/* <Experience activeItem={hoveredItem} /> */}
-          <TimesFour />
+          {/* <TimesFour /> */}
         </Canvas>
-
+        <iframe
+          src="https://my.spline.design/xxanimationcopy-4a93a07af3e4e67bb6edc0ad910732b5/"
+          // frameBorder="0"
+          width="100%"
+          height="100%"
+          className="absolute left-0 top-0 h-full w-full"
+        ></iframe>
         <div
           style={{ userSelect: "none" }}
           className={`font-rift absolute top-0 flex h-full w-full cursor-default flex-col justify-center py-5 text-[15vw] font-semibold leading-[14vw]`}

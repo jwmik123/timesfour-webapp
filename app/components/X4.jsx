@@ -1,0 +1,127 @@
+import useSpline from "@splinetool/r3f-spline";
+import { Edges, PerspectiveCamera } from "@react-three/drei";
+import { MeshTransmissionMaterial } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { Vector3 } from "three";
+import { useControls, Leva } from "leva";
+import { useRef } from "react";
+import { useEffect, useState } from "react";
+
+export default function Model({ ...props }) {
+  const { nodes, materials } = useSpline(
+    "https://prod.spline.design/VDPmop7p9WsgxMtX/scene.splinecode",
+  );
+
+  const config = useControls({
+    backside: false,
+    samples: { value: 16, min: 1, max: 32, step: 1 },
+    resolution: { value: 256, min: 64, max: 2048, step: 64 },
+    transmission: { value: 0.98, min: 0, max: 1 },
+    roughness: { value: 0.24, min: 0, max: 1, step: 0.01 },
+    clearcoat: { value: 0.1, min: 0, max: 1, step: 0.01 },
+    clearcoatRoughness: { value: 0.1, min: 0, max: 1, step: 0.01 },
+    thickness: { value: 75, min: 0, max: 200, step: 0.01 },
+    backsideThickness: { value: 200, min: 0, max: 200, step: 0.01 },
+    ior: { value: 1.2, min: 1, max: 5, step: 0.01 },
+    chromaticAberration: { value: 1, min: 0, max: 1 },
+    anisotropy: { value: 1, min: 0, max: 10, step: 0.01 },
+    distortion: { value: 0, min: 0, max: 1, step: 0.01 },
+    distortionScale: { value: 0.2, min: 0.01, max: 1, step: 0.01 },
+    temporalDistortion: { value: 0, min: 0, max: 1, step: 0.01 },
+    attenuationDistance: { value: 0.5, min: 0, max: 10, step: 0.01 },
+    attenuationColor: "#ffffff",
+    color: "#ffffff",
+    gradient: { value: 0.7, min: 0, max: 1 },
+  });
+
+  const shapex = useRef();
+  const groupRef = useRef();
+
+  const target = new Vector3();
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePosition({
+        x: (event.clientX / window.innerWidth) * 2 - 1,
+        y: -(event.clientY / window.innerHeight) * 2 + 1,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useFrame(({ viewport, camera }) => {
+    if (shapex.current) {
+      shapex.current.rotation.z += 0.005;
+    }
+
+    const vector = new Vector3(mousePosition.x, mousePosition.y, 0.5);
+    vector.unproject(camera);
+
+    target.set(vector.x, vector.y, 200);
+
+    console.log(target);
+
+    if (groupRef.current) {
+      groupRef.current.lookAtPosition =
+        groupRef.current.lookAtPosition || new Vector3();
+      groupRef.current.lookAtPosition.lerp(target, 0.1);
+      groupRef.current.lookAt(groupRef.current.lookAtPosition);
+    }
+  });
+
+  return (
+    <>
+      <Leva hidden="true" />
+      <color attach="background" args={["#1d292f"]} />
+      <group {...props} dispose={null}>
+        <scene name="Scene 1">
+          <group ref={groupRef}>
+            <mesh
+              name="Shape 8"
+              geometry={nodes["Shape 8"].geometry}
+              material={materials.Glass}
+              castShadow
+              receiveShadow
+              position={[5, 0, 30]}
+              scale={1}
+            >
+              <MeshTransmissionMaterial {...config} />
+            </mesh>
+            <mesh
+              name="Shape 7"
+              ref={shapex}
+              geometry={nodes["Shape 7"].geometry}
+              material={materials["Gradient Green"]}
+              castShadow
+              receiveShadow
+              position={[0, 0, -20]}
+              rotation={[0, 0, Math.PI / 4]}
+              scale={1}
+            >
+              <Edges color="#86EFAC" />
+            </mesh>
+          </group>
+          <PerspectiveCamera
+            name="Camera"
+            makeDefault={true}
+            far={100000}
+            near={70}
+            fov={45}
+            position={[-200, 100, 500]}
+            rotation={[-0.25, -0.36, -0.09]}
+            scale={1}
+          />
+          <hemisphereLight
+            name="Default Ambient Light"
+            intensity={0.75}
+            color="#86EFAC"
+          />
+        </scene>
+      </group>
+    </>
+  );
+}

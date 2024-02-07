@@ -87,7 +87,7 @@ export default function Model({ ...props }) {
           <group ref={groupRef}>
             <mesh
               name="Boolean"
-              geometry={nodes["Shape 8"].geometry}
+              geometry={nodes.Boolean.geometry}
               castShadow
               receiveShadow
               position={[5, 0, 30]}

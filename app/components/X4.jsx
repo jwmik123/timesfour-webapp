@@ -44,13 +44,11 @@ export default function Model({ ...props }) {
 
   useEffect(() => {
     if (shapex.current) {
-      // shapex.current.rotation.z += 0.005;
       gsap.to(shapex.current.rotation, {
-        duration: 4,
-        ease: "power2.inOut",
-        z: "+=" + Math.PI * 2,
+        duration: 2,
+        ease: "power3.inOut",
+        z: "+=" + (Math.PI * 2) / 4,
         repeat: -1,
-        yoyo: false,
       });
     }
     const handleMouseMove = (event) => {
@@ -88,9 +86,8 @@ export default function Model({ ...props }) {
         <scene name="Scene 1">
           <group ref={groupRef}>
             <mesh
-              name="Shape 8"
+              name="Boolean"
               geometry={nodes["Shape 8"].geometry}
-              material={materials.Glass}
               castShadow
               receiveShadow
               position={[5, 0, 30]}

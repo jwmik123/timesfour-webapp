@@ -4,6 +4,8 @@ import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,7 +28,7 @@ export default function RootLayout({ children }) {
           </div>
           <Footer />
         </Suspense>
-
+        <SpeedInsights />
         <div className="bg-grain w-embed" />
       </body>
     </html>

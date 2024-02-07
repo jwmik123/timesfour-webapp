@@ -6,6 +6,7 @@ import { Vector3 } from "three";
 import { useControls, Leva } from "leva";
 import { useRef } from "react";
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 export default function Model({ ...props }) {
   const { nodes, materials } = useSpline(
@@ -42,6 +43,16 @@ export default function Model({ ...props }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    if (shapex.current) {
+      // shapex.current.rotation.z += 0.005;
+      gsap.to(shapex.current.rotation, {
+        duration: 4,
+        ease: "power2.inOut",
+        z: "+=" + Math.PI * 2,
+        repeat: -1,
+        yoyo: false,
+      });
+    }
     const handleMouseMove = (event) => {
       setMousePosition({
         x: (event.clientX / window.innerWidth) * 2 - 1,
@@ -54,10 +65,6 @@ export default function Model({ ...props }) {
   }, []);
 
   useFrame(({ viewport, camera }) => {
-    if (shapex.current) {
-      shapex.current.rotation.z += 0.005;
-    }
-
     const vector = new Vector3(mousePosition.x, mousePosition.y, 0.5);
     vector.unproject(camera);
 

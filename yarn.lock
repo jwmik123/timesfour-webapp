@@ -453,9 +453,9 @@
     zustand "^3.7.1"
 
 "@splinetool/loader@^1.0.48":
-  version "1.0.48"
-  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-1.0.48.tgz#674865493641b267b4f2bf2624195b5e1fc35665"
-  integrity sha512-GpfadTlIx9bx3QopdBy9cfymQFM6P8klqgCiU5AxV6fN06ViDr+T+tPg2vrH+DE3Fhnkta6a14zE1ZXXAXq7og==
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-1.0.50.tgz#d8d9c977d0c3c63e73d11caa37b8df3108a73b5a"
+  integrity sha512-a/gLgFJVpe8RBC+FmxrspN8YAnqjAUk/gBGZYLJAqyDiRztK0FzubRg20gkA4rY50R4hCcwgH2baIXrjTRMBLg==
   dependencies:
     semver-compare "^1.0.0"
 

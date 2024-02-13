@@ -124,3 +124,33 @@ w-embed::before {
         transform: translate(-10%, 10%);
     }
 }
+
+
+/* Enter Animation */
+@keyframes enterAnimation {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Leave Animation */
+@keyframes leaveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Applying animations to the container */
+.barba-enter {
+    animation: enterAnimation 0.5s forwards;
+}
+
+.barba-leave {
+    animation: leaveAnimation 0.5s forwards;
+}

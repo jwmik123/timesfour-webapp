@@ -1,12 +1,14 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
-import Loading from "./loading";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import dynamic from "next/dynamic";
+
+import Loading from "./loading";
+import Footer from "@/app/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const ClientSideBarba = dynamic(() => import("@/app/components/ClientSideBarba"), {ssr: false});
 
 export const metadata = {
   title: "Times Four - Creative Studio",
@@ -21,9 +23,11 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`${inter.className} overflow-hidden selection:bg-yellow-300`}
+        data-barba="wrapper"
       >
         <Suspense fallback={<Loading />}>
-          <div className="bg-spruce content-slide min-h-screen rounded-bl-3xl rounded-br-3xl">
+          <div data-barba="container" className="bg-spruce content-slide min-h-screen rounded-bl-3xl rounded-br-3xl">
+            <ClientSideBarba />
             {children}
           </div>
           <Footer />

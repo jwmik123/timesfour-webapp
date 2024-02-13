@@ -11,7 +11,6 @@ export default function Masthead() {
         camera={{ position: [5, 2, 5], fov: 75 }}
         className="relative aspect-video w-full"
       >
-        {/* <Experience activeItem={hoveredItem} /> */}
         <OrbitControls enableZoom={false} />
         <Model />
       </Canvas>

@@ -62,13 +62,11 @@ export default function Model({ ...props }) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  useFrame(({ viewport, camera }) => {
+  useFrame(({ camera }) => {
     const vector = new Vector3(mousePosition.x, mousePosition.y, 0.5);
     vector.unproject(camera);
 
     target.set(vector.x, vector.y, 200);
-
-    console.log(target);
 
     if (groupRef.current) {
       groupRef.current.lookAtPosition =

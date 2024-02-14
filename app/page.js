@@ -34,8 +34,8 @@ export default function Home() {
   });
 
   const sentence =
-    "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
-  // "Embark on a creative journey with us, where 'Where brands bloom in the garden of tomorrow' is not just our slogan, but our mission. As a creative studio, we specialize in designing exquisite websites, crafting detailed 3D products and animations, and producing captivating videos and films. Here, your brand's potential is unleashed, nurtured to flourish in an ever-evolving digital landscape. Partner with us to see your vision take root and thrive in the garden of tomorrow.";
+    // "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
+    "Embark on a creative journey with us, where 'Where brands bloom in the garden of tomorrow' is not just our slogan, but our mission. As a creative studio, we specialize in designing exquisite websites, crafting detailed 3D products and animations, and producing captivating videos and films. Here, your brand's potential is unleashed, nurtured to flourish in an ever-evolving digital landscape. Partner with us to see your vision take root and thrive in the garden of tomorrow.";
 
   return (
     <>
@@ -44,9 +44,9 @@ export default function Home() {
         <Masthead />
         <Marquee />
         <VideoPlayer />
-        <div className="mx-10 flex w-full items-center justify-center py-32">
-          <div className="hidden w-1/3 md:block"></div>
-          <div className="mx-10 w-full md:w-3/5">
+        <div className="flex items-center justify-center w-full py-32 mx-10">
+          {/* <div className="hidden w-1/3 md:block"></div> */}
+          <div className="w-full">
             <AnimatedText text={sentence} />
           </div>
         </div>
@@ -57,13 +57,13 @@ export default function Home() {
           <div>
             <Carousel />
           </div>
-          <div className="flex w-full items-center justify-center py-36">
+          <div className="flex items-center justify-center w-full py-36">
             <div className="w-[40%]">
               <p className="text-lg text-gray-500">
                 Ontdek al onze projecten en klanten die Times Four heeft
                 geholpen om hun doelen te behalen.
               </p>
-              <button className="underline-offset-3 mt-2 text-2xl underline hover:text-yellow-400">
+              <button className="mt-2 text-2xl underline underline-offset-3 hover:text-yellow-400">
                 Alle projecten
               </button>
             </div>

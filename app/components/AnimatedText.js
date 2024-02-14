@@ -28,7 +28,10 @@ const AnimatedText = ({ text }) => {
     };
   }, []);
   return (
-    <p className="text-[3rem] leading-[3.5rem] tracking-tight" ref={textRef}>
+    <p
+      className="text-[4rem] leading-[3.5rem] tracking-tight text-left font-bebas-neue text-white md:text-8xl md:leading-[7rem] md:tracking-tighter"
+      ref={textRef}
+    >
       {Array.from(text).map((char, i) => (
         <span key={i}>{char}</span>
       ))}

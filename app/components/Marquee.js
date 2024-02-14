@@ -11,6 +11,8 @@ const Marquee = () => {
     if (marqueeRef.current) {
       let direction = 1;
 
+      console.log(marqueeRef.current);
+
       const roll1 = roll(".marquee-inner-wrap", { duration: 13 }, false),
         scroll = ScrollTrigger.create({
           trigger: marqueeRef.current,
@@ -19,10 +21,13 @@ const Marquee = () => {
               direction *= -1;
               roll1.timeScale(direction);
             }
-            self.direction === -1
+            if (marqueeRef.current){
+              self.direction === -1
               ? marqueeRef.current.classList.remove("flipped")
               : marqueeRef.current.classList.add("flipped");
+            }
           },
+          
         });
 
       function roll(targets, vars, reverse) {
@@ -65,6 +70,13 @@ const Marquee = () => {
           tl.totalTime(time);
         });
         return tl;
+      }
+    }
+
+    return () => {
+    
+      if(marqueeRef.current) {
+        marqueeRef.current.classList.remove("flipped");
       }
     }
   }, []);

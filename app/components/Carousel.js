@@ -4,7 +4,6 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper";
 
 import "swiper/css";
 
@@ -65,8 +64,6 @@ export default function Carousel() {
           bulletActiveClass: "swiper-pagination-bullet-active",
           bulletClass: "swiper-pagination-bullet",
         }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         className="my-20 cursor-grab"
       >
         <SwiperSlide>
@@ -80,7 +77,7 @@ export default function Carousel() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hidden bg-green-300 rounded h-96 slide-container">
+          <div className="overflow-hidden bg-blue-300 rounded h-96 slide-container">
             <Image
               src={VolumeHair}
               className="object-cover w-full h-full slide-image"
@@ -90,7 +87,7 @@ export default function Carousel() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hidden bg-green-300 rounded h-96 slide-container">
+          <div className="overflow-hidden bg-red-300 rounded h-96 slide-container">
             <Image
               src={VitalSelect}
               className="object-cover w-full h-full slide-image"

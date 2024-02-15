@@ -1,41 +1,53 @@
 "use client";
+import { delay, motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./X4";
 
-export default function Masthead() {
+export default function Masthead({ font }) {
+  const cinzel = font.className;
   return (
     <div className="relative mx-10 h-[100vh]">
       <Canvas
         shadows
         camera={{ position: [5, 2, 5], fov: 75 }}
-        className="relative aspect-video w-full"
+        className="relative w-full aspect-video"
       >
         <OrbitControls enableZoom={false} />
         <Model />
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`font-rift absolute top-0 flex h-full w-full cursor-default flex-col justify-center py-5 text-[15vw] font-semibold leading-[14vw]`}
+        className={`${cinzel} absolute top-0 flex h-full w-full cursor-default flex-col justify-center py-5 text-[10vw] font-semibold leading-[14vw]`}
       >
-        <div className="flex justify-between">
-          <span>times</span>
-          <span className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100">
+        <div className="flex justify-between overflow-hidden">
+          <motion.span
+            initial={{ y: "100%" }}
+            animate={{ y: "0" }}
+            className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100"
+          >
+            times
+          </motion.span>
+          <motion.span
+            initial={{ y: "100%" }}
+            animate={{ y: "0" }}
+            className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100"
+          >
             marketing
-          </span>
+          </motion.span>
         </div>
         <div className="flex justify-between">
-          <span className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100">
+          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
             design
           </span>
           <span>four</span>
-          <span className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100">
+          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
             film
           </span>
         </div>
         <div className="flex justify-between">
           <span>x4</span>
-          <span className="opacity-20 transition-all duration-300 hover:text-green-300 hover:opacity-100">
+          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
             development
           </span>
         </div>

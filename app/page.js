@@ -1,17 +1,19 @@
 "use client";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
-import AnimatedText from "@/app/components/AnimatedText";
 import Carousel from "@/app/components/Carousel";
 import Masthead from "@/app/components/Masthead";
 import Marquee from "@/app/components/Marquee";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
+import Paragraph from "./components/Paragraph";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
+const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -41,14 +43,11 @@ export default function Home() {
     <>
       <div className={`relative w-full`}>
         <Navigation font={bebas} />
-        <Masthead />
+        <Masthead font={cinzel} />
         <Marquee />
         <VideoPlayer />
-        <div className="flex items-center justify-center w-full py-32 mx-10">
-          {/* <div className="hidden w-1/3 md:block"></div> */}
-          <div className="w-full">
-            <AnimatedText text={sentence} />
-          </div>
+        <div className="py-32 mx-10 max-w-screen">
+          <Paragraph text={sentence} font={cinzel} />
         </div>
         <div className="mx-10">
           <h2 className="text-2xl">

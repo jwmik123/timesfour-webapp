@@ -26,9 +26,9 @@ export default function Masthead({ font }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute left-0 text-xl text-white bottom-10"
+        className="absolute text-xl text-white rotate-90 -left-10 bottom-24"
       >
-        <span>&copy; a creative studio</span>
+        <span className="uppercase">scroll down</span>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function Masthead({ font }) {
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute right-0 text-xl text-white bottom-10"
       >
-        <span>scroll down to view</span>
+        <span>__ a creative studio</span>
       </motion.div>
     </div>
   );
@@ -45,17 +45,17 @@ export default function Masthead({ font }) {
 const StaggerText = ({ text }) => {
   const letters = Array.from(text);
   const letterVariant = {
-    hidden: { y: 40, opacity: 0 },
+    hidden: { y: -20, opacity: 0 },
     visible: (i) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: i * 0.1, // Stagger the animation
+        delay: i * 0.1,
       },
     }),
   };
   return (
-    <div className="uppercase text-[12vw] mix-blend-overlay relative">
+    <div className="uppercase text-[20vw] font-bold text-white mix-blend-overlay relative">
       <motion.h1 className="">
         {letters.map((letter, index) => (
           <motion.span

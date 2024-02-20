@@ -10,12 +10,14 @@ import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import { Cinzel } from "next/font/google";
 import { Abril_Fatface } from "next/font/google";
+import { Luckiest_Guy } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
 import Paragraph from "./components/Paragraph";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
 const abril = Abril_Fatface({ subsets: ["latin"], weight: "400" });
+const luckiest = Luckiest_Guy({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -55,7 +57,7 @@ export default function Home() {
     <>
       <div className={`relative w-full`}>
         <Navigation font={bebas} />
-        <Masthead font={abril} />
+        <Masthead font={bebas} />
         <Marquee />
         <VideoPlayer />
         <div className="py-32 mx-10 max-w-screen">

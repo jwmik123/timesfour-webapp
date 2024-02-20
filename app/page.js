@@ -9,11 +9,13 @@ import VideoPlayer from "@/app/components/VideoPlayer";
 import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import { Cinzel } from "next/font/google";
+import { Abril_Fatface } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
 import Paragraph from "./components/Paragraph";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 const cinzel = Cinzel({ subsets: ["latin"], weight: "400" });
+const abril = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -36,14 +38,14 @@ export default function Home() {
   });
 
   const sentence =
-    // "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
-    "Embark on a creative journey with us, where 'Where brands bloom in the garden of tomorrow' is not just our slogan, but our mission. As a creative studio, we specialize in designing exquisite websites, crafting detailed 3D products and animations, and producing captivating videos and films. Here, your brand's potential is unleashed, nurtured to flourish in an ever-evolving digital landscape. Partner with us to see your vision take root and thrive in the garden of tomorrow.";
+    "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
+  // "Embark on a creative journey with us, where 'Where brands bloom in the garden of tomorrow' is not just our slogan, but our mission. As a creative studio, we specialize in designing exquisite websites, crafting detailed 3D products and animations, and producing captivating videos and films. Here, your brand's potential is unleashed, nurtured to flourish in an ever-evolving digital landscape. Partner with us to see your vision take root and thrive in the garden of tomorrow.";
 
   return (
     <>
       <div className={`relative w-full`}>
         <Navigation font={bebas} />
-        <Masthead font={cinzel} />
+        <Masthead font={abril} />
         <Marquee />
         <VideoPlayer />
         <div className="py-32 mx-10 max-w-screen">

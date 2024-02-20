@@ -1,11 +1,11 @@
 "use client";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./X4";
 
 export default function Masthead({ font }) {
-  const cinzel = font.className;
+  const abril = font.className;
   return (
     <div className="relative mx-10 h-[100vh]">
       <Canvas
@@ -18,40 +18,39 @@ export default function Masthead({ font }) {
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`${cinzel} absolute top-0 flex h-full w-full cursor-default flex-col justify-center py-5 text-[10vw] font-semibold leading-[14vw]`}
+        className={`${abril} absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5  font-bold`}
       >
-        <div className="flex justify-between overflow-hidden">
-          <motion.span
-            initial={{ y: "100%" }}
-            animate={{ y: "0" }}
-            className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100"
-          >
-            times
-          </motion.span>
-          <motion.span
-            initial={{ y: "100%" }}
-            animate={{ y: "0" }}
-            className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100"
-          >
-            marketing
-          </motion.span>
-        </div>
-        <div className="flex justify-between">
-          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
-            design
-          </span>
-          <span>four</span>
-          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
-            film
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span>x4</span>
-          <span className="transition-all duration-300 opacity-20 hover:text-green-300 hover:opacity-100">
-            development
-          </span>
-        </div>
+        <StaggerText text="Times Four" />
       </div>
     </div>
   );
 }
+
+const StaggerText = ({ text }) => {
+  const letters = Array.from(text);
+  const letterVariant = {
+    hidden: { y: 40, opacity: 0 },
+    visible: (i) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1, // Stagger the animation
+      },
+    }),
+  };
+  return (
+    <motion.h1 className="uppercase text-[12vw] mix-blend-overlay">
+      {letters.map((letter, index) => (
+        <motion.span
+          key={index}
+          variants={letterVariant}
+          initial="hidden"
+          animate="visible"
+          custom={index} // Custom delay for each letter
+        >
+          {letter}
+        </motion.span>
+      ))}
+    </motion.h1>
+  );
+};

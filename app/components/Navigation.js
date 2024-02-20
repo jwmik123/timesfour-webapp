@@ -87,9 +87,9 @@ export const Navigation = ({ font }) => {
         >
           {hovered ? "Times Four" : "X4"}
         </span>
-        <div className="absolute left-[45%] flex items-center justify-center md:top-[50%] lg:top-[50%]">
+        {/* <div className="absolute left-[45%] flex items-center justify-center md:top-[50%] lg:top-[50%]">
           <span>A Creative Studio.</span>
-        </div>
+        </div> */}
         <div className={"relative"}>
           <motion.div
             className={

@@ -10,7 +10,7 @@ import { gsap } from "gsap";
 
 export default function Model({ ...props }) {
   const { nodes, materials } = useSpline(
-    "https://prod.spline.design/VDPmop7p9WsgxMtX/scene.splinecode",
+    "https://prod.spline.design/VDPmop7p9WsgxMtX/scene.splinecode"
   );
 
   const config = useControls({

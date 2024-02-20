@@ -48,7 +48,7 @@ export default function Model({ ...props }) {
       gsap.fromTo(
         groupRef.current.scale,
         { x: 0, y: 0, z: 0 },
-        { x: 1, y: 1, z: 1, duration: 1, ease: "power3.inOut" }
+        { x: 1, y: 1, z: 1, duration: 2, ease: "power3.inOut" }
       );
     }
 

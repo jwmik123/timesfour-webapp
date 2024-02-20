@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useLayoutEffect } from "react";
+import { Suspense, useEffect, useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import Carousel from "@/app/components/Carousel";
@@ -36,6 +36,16 @@ export default function Home() {
     };
     requestAnimationFrame(raf);
   });
+
+  useEffect(() => {
+    const audio = new Audio("Epic.mp3");
+    audio.volume = 0.2;
+    audio.play();
+
+    return () => {
+      audio.pause();
+    };
+  }, []);
 
   const sentence =
     "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";

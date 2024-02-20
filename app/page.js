@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutEffect } from "react";
+import { Suspense, useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import Carousel from "@/app/components/Carousel";

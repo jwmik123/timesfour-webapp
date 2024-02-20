@@ -22,6 +22,22 @@ export default function Masthead({ font }) {
       >
         <StaggerText text="Times Four" />
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute left-0 text-xl text-white bottom-10"
+      >
+        <span>&copy; a creative studio</span>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute right-0 text-xl text-white bottom-10"
+      >
+        <span>scroll down to view</span>
+      </motion.div>
     </div>
   );
 }
@@ -39,18 +55,20 @@ const StaggerText = ({ text }) => {
     }),
   };
   return (
-    <motion.h1 className="uppercase text-[12vw] mix-blend-overlay">
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          variants={letterVariant}
-          initial="hidden"
-          animate="visible"
-          custom={index} // Custom delay for each letter
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </motion.h1>
+    <div className="uppercase text-[12vw] mix-blend-overlay relative">
+      <motion.h1 className="">
+        {letters.map((letter, index) => (
+          <motion.span
+            key={index}
+            variants={letterVariant}
+            initial="hidden"
+            animate="visible"
+            custom={index} // Custom delay for each letter
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </motion.h1>
+    </div>
   );
 };

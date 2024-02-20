@@ -43,6 +43,15 @@ export default function Model({ ...props }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    // GSAP animation for groupRef scale
+    if (groupRef.current) {
+      gsap.fromTo(
+        groupRef.current.scale,
+        { x: 0, y: 0, z: 0 },
+        { x: 1, y: 1, z: 1, duration: 1, ease: "power3.inOut" }
+      );
+    }
+
     if (shapex.current) {
       gsap.to(shapex.current.rotation, {
         duration: 2,

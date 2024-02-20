@@ -80,17 +80,20 @@ export const Navigation = ({ font }) => {
   return (
     <div className={"fixed z-50 w-full"}>
       <div className="flex justify-between px-10 py-10">
-        <span
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          className={`${bebas} min-w-[8rem] cursor-pointer text-4xl`}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className={`${bebas} min-w-[8rem] cursor-pointer text-6xl`}
         >
-          {hovered ? "Times Four" : "X4"}
-        </span>
-        {/* <div className="absolute left-[45%] flex items-center justify-center md:top-[50%] lg:top-[50%]">
-          <span>A Creative Studio.</span>
-        </div> */}
-        <div className={"relative"}>
+          X4
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className={"relative"}
+        >
           <motion.div
             className={
               "menu absolute right-0 top-0 z-50 rounded-2xl bg-green-300"
@@ -157,7 +160,7 @@ export const Navigation = ({ font }) => {
               {isActive ? "CLOSE" : "MENU"}
             </button>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

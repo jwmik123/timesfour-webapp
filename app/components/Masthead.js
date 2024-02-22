@@ -11,7 +11,7 @@ export default function Masthead({ font }) {
       <Canvas
         shadows
         camera={{ position: [5, 2, 5], fov: 75 }}
-        className="relative w-full aspect-video"
+        className="relative aspect-video w-full"
       >
         <OrbitControls enableZoom={false} />
         <Model />
@@ -25,16 +25,16 @@ export default function Masthead({ font }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute text-xl text-white rotate-90 -left-10 bottom-24"
+        transition={{ duration: 1, delay: 4 }}
+        className="absolute -left-10 bottom-24 rotate-90 text-xl text-white"
       >
         <span className="uppercase">scroll down</span>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute right-0 text-xl text-white bottom-10"
+        transition={{ duration: 1, delay: 4.5 }}
+        className="absolute bottom-10 right-0 text-xl text-white"
       >
         <span>__ a creative studio</span>
       </motion.div>
@@ -50,12 +50,12 @@ const StaggerText = ({ text }) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: i * 0.1,
+        delay: 3.7 + i * 0.1,
       },
     }),
   };
   return (
-    <div className="uppercase text-[20vw] font-bold text-white mix-blend-overlay relative">
+    <div className="relative text-[20vw] font-bold uppercase text-white mix-blend-overlay">
       <motion.h1 className="">
         {letters.map((letter, index) => (
           <motion.span

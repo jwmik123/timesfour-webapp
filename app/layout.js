@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Footer from "@/app/components/Footer";
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} overflow-hidden selection:bg-yellow-300`}
       >
-        <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
+        <div className="bg-spruce content-slide min-h-screen rounded-bl-3xl rounded-br-3xl">
           {children}
         </div>
         <Footer />

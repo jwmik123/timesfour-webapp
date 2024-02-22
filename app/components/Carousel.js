@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -29,7 +29,7 @@ export default function Carousel() {
           },
           delay: index * 0.5 + 0.5,
           duration: 0.8,
-        }
+        },
       );
     });
 
@@ -47,7 +47,7 @@ export default function Carousel() {
           },
           delay: index * 0.5,
           duration: 0.3,
-        }
+        },
       );
     });
   }, []);
@@ -67,40 +67,40 @@ export default function Carousel() {
         className="my-20 cursor-grab"
       >
         <SwiperSlide>
-          <div className="overflow-hidden bg-green-300 rounded h-96 slide-container">
+          <div className="slide-container h-96 overflow-hidden rounded bg-green-300">
             <Image
               src={MikDevelopment}
-              className="object-cover w-full h-full slide-image"
+              className="slide-image h-full w-full object-cover"
               alt="Mik Development"
               placeholder="blur"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hidden bg-blue-300 rounded h-96 slide-container">
+          <div className="slide-container h-96 overflow-hidden rounded bg-blue-300">
             <Image
               src={VolumeHair}
-              className="object-cover w-full h-full slide-image"
+              className="slide-image h-full w-full object-cover"
               alt="Mik Development"
               placeholder="blur"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hidden bg-red-300 rounded h-96 slide-container">
+          <div className="slide-container h-96 overflow-hidden rounded bg-red-300">
             <Image
               src={VitalSelect}
-              className="object-cover w-full h-full slide-image"
+              className="slide-image h-full w-full object-cover"
               alt="Mik Development"
               placeholder="blur"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="overflow-hidden bg-yellow-400 rounded h-96 slide-container">
+          <div className="slide-container h-96 overflow-hidden rounded bg-yellow-400">
             <Image
               src={MikDevelopment}
-              className="object-cover w-full h-full slide-image"
+              className="slide-image h-full w-full object-cover"
               alt="Mik Development"
               placeholder="blur"
             />

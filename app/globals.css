@@ -125,33 +125,6 @@ w-embed::before {
   }
 }
 
-/* @keyframes enterAnimation {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes leaveAnimation {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-.barba-enter {
-    animation: enterAnimation 0.5s forwards;
-}
-
-.barba-leave {
-    animation: leaveAnimation 0.5s forwards;
-}  */
-
 .page-transition-enter {
   opacity: 0;
   transform: translateY(-20px);
@@ -172,4 +145,8 @@ w-embed::before {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 300ms, transform 300ms;
+}
+
+.modalSlider {
+  transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }

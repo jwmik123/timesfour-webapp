@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,6 @@ import VideoPlayer from "@/app/components/VideoPlayer";
 import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
-import Paragraph from "./components/Paragraph";
 import Projects from "./components/Projects";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
@@ -33,16 +32,6 @@ export default function Home() {
     };
     requestAnimationFrame(raf);
   });
-
-  // useEffect(() => {
-  //   const audio = new Audio("Epic.mp3");
-  //   audio.volume = 0.2;
-  //   audio.play();
-
-  //   return () => {
-  //     audio.pause();
-  //   };
-  // }, []);
 
   const sentence = "Where brands bloom in the garden of tomorrow.";
   // "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";

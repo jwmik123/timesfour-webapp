@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import Footer from "@/app/components/Footer";
 
@@ -20,11 +21,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} overflow-hidden selection:bg-yellow-300`}
       >
-        <div className="bg-spruce content-slide min-h-screen rounded-bl-3xl rounded-br-3xl">
+        <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
           {children}
         </div>
         <Footer />
         <SpeedInsights />
+        <Analytics />
         <div className="bg-grain w-embed" />
       </body>
     </html>

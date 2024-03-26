@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import { motion } from "framer-motion";
 
@@ -10,10 +10,22 @@ import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
 import Projects from "./components/Projects";
+import Paragraph from "./components/Paragraph";
+
+import Preloader from "./components/Preloader";
+import Intro from "./components/Intro";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
 export default function Home() {
+  const [contentLoaded, setContentLoaded] = useState(false);
+  const mediaFiles = [
+    "vitalselect.png",
+    "volumehair.png",
+    "mikdevelopment.png",
+    "https://prod.spline.design/VDPmop7p9WsgxMtX/scene.splinecode",
+  ];
+
   useLayoutEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -33,58 +45,51 @@ export default function Home() {
     requestAnimationFrame(raf);
   });
 
-  const sentence = "Where brands bloom in the garden of tomorrow.";
-  // "Wij spreken de taal van innovatie. Van filmische verhalen tot 3D-meesterwerken, wij maken uw merk onvergetelijk.";
-  // "Embark on a creative journey with us, where 'Where brands bloom in the garden of tomorrow' is not just our slogan, but our mission. As a creative studio, we specialize in designing exquisite websites, crafting detailed 3D products and animations, and producing captivating videos and films. Here, your brand's potential is unleashed, nurtured to flourish in an ever-evolving digital landscape. Partner with us to see your vision take root and thrive in the garden of tomorrow.";
+  const sentence = "Where brands bloom in the garden of tomorrow";
 
   return (
     <>
-      <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: "-100vh" }}
-        transition={{ duration: 0.8, delay: 3, ease: "easeInOut" }}
-        className="loading-screen fixed z-[9999] flex h-[100vh] w-full cursor-wait items-center justify-center bg-green-300"
-      >
-        <div className={`${bebas.className} text-spruce text-5xl`}>
-          Welcome to Times Four
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: "-100vh" }}
-        transition={{ duration: 0.8, delay: 3.1, ease: "easeInOut" }}
-        className="loading-screen bg-cutty fixed z-[9998] flex h-[100vh] w-full cursor-wait items-center justify-center"
-      ></motion.div>
-      <div className={`relative w-full`}>
-        <Navigation font={bebas} />
-        <Masthead font={bebas} />
-        <Marquee />
-        {/* <div className="mx-10 max-w-screen py-44">
-          <Paragraph text={sentence} font={bebas} />
-        </div> */}
-        <div className="p-12 pb-24 mx-10 my-32 bg-green-300 text-spruce rounded-3xl">
-          <h2 className="text-xl">
-            <li> Hoe wij onze klanten helpen</li>
-          </h2>
-          {/* <Carousel /> */}
-          <Projects font={bebas} />
-        </div>
-        <div className="flex items-center justify-center w-full pb-36">
-          <div className="w-[40%]">
-            <p className="text-lg text-gray-500">
-              Ontdek al onze projecten en klanten die Times Four heeft geholpen
-              om hun doelen te behalen.
-            </p>
-            <button className="mt-2 text-2xl underline underline-offset-3 hover:text-yellow-400">
-              Alle projecten
-            </button>
-          </div>
-        </div>
-        <VideoPlayer />
+      {!contentLoaded && (
+        <Preloader
+          mediaFiles={mediaFiles}
+          onAllLoaded={() => setContentLoaded(true)}
+        />
+      )}
+      {contentLoaded && (
+        <>
+          <Intro />
+          <div className={`relative w-full`}>
+            <Navigation font={bebas} />
+            <Masthead font={bebas} />
+            <Marquee />
+            {/* <div className="mx-10 max-w-screen py-44">
+              <Paragraph text={sentence} font={bebas} />
+            </div> */}
+            <div className="p-12 pb-24 mx-10 my-32 bg-green-300 text-spruce rounded-3xl">
+              <h2 className="text-xl">
+                <li> Hoe wij onze klanten helpen</li>
+              </h2>
+              {/* <Carousel /> */}
+              <Projects font={bebas} />
+            </div>
+            <div className="flex items-center justify-center w-full pb-36">
+              <div className="w-[40%]">
+                <p className="text-lg text-gray-500">
+                  Ontdek al onze projecten en klanten die Times Four heeft
+                  geholpen om hun doelen te behalen.
+                </p>
+                <button className="mt-2 text-2xl underline underline-offset-3 hover:text-yellow-400">
+                  Alle projecten
+                </button>
+              </div>
+            </div>
+            <VideoPlayer />
 
-        <div className="mx-10"></div>
-        <Reviews />
-      </div>
+            <div className="mx-10"></div>
+            <Reviews />
+          </div>
+        </>
+      )}
     </>
   );
 }

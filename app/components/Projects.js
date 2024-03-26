@@ -52,7 +52,7 @@ const Project = ({ title, index, setModal, font }) => {
       onMouseEnter={() => setModal({ active: true, index })}
       onMouseLeave={() => setModal({ active: false, index })}
     >
-      <h2 className={`text-7xl ${font}`}>{title}</h2>
+      <h2 className={`text-7xl font-rift font-bold`}>{title}</h2>
       <span>Design &amp; development</span>
     </div>
   );

@@ -11,14 +11,14 @@ export default function Masthead({ font }) {
       <Canvas
         shadows
         camera={{ position: [5, 2, 5], fov: 75 }}
-        className="relative aspect-video w-full"
+        className="relative w-full aspect-video"
       >
         <OrbitControls enableZoom={false} />
         <Model />
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`${abril} absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5  font-bold`}
+        className={`font-rift font-bold absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5  font-bold`}
       >
         <StaggerText text="Times Four" />
       </div>
@@ -26,7 +26,7 @@ export default function Masthead({ font }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 4 }}
-        className="absolute -left-10 bottom-24 rotate-90 text-xl text-white"
+        className="absolute text-xl text-white rotate-90 -left-10 bottom-24"
       >
         <span className="uppercase">scroll down</span>
       </motion.div>
@@ -34,7 +34,7 @@ export default function Masthead({ font }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 4.5 }}
-        className="absolute bottom-10 right-0 text-xl text-white"
+        className="absolute right-0 text-xl text-white bottom-10"
       >
         <span>__ a creative studio</span>
       </motion.div>

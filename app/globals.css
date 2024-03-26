@@ -13,12 +13,14 @@ canvas {
   position: absolute;
 }
 
-.swiper-pagination-bullet {
-  background: white;
-}
+@layer components {
+  .project-li {
+    @apply flex items-center justify-between px-10 py-10 transition-all duration-300 cursor-pointer hover:bg-green-300 hover:text-black opacity-70 hover:opacity-100;
+  }
 
-.swiper-pagination-bullet-active {
-  background: white;
+  .project-li .link {
+    @apply text-4xl font-bold font-rift;
+  }
 }
 
 .animated-text p {
@@ -51,7 +53,7 @@ footer .link span:hover::after {
   width: 100%;
 }
 
-/* Grain from https://mrboost.nl/ */
+/* Grain inspiration from https://mrboost.nl/ */
 w-embed::before {
   content: " ";
   grid-area: 1 / 1 / 2 / 2;

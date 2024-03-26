@@ -18,15 +18,18 @@ export default function VideoPlayer() {
         end: "bottom bottom",
       },
     });
-    timeline
-      .fromTo(videoRef.current, {
+    timeline.fromTo(
+      videoRef.current,
+      {
         width: "100%",
         borderRadius: "0",
         ease: "power1.out",
-      },{
+      },
+      {
         width: "70%",
         borderRadius: "25px",
-      })
+      }
+    );
   }, []);
 
   return (
@@ -43,7 +46,8 @@ export default function VideoPlayer() {
         muted
         playsInline
       >
-        <source src="https://mik-development.s3.eu-central-1.amazonaws.com/placeholder-x4+(1080p).mp4" />
+        {/* <source src="https://mik-development.s3.eu-central-1.amazonaws.com/placeholder-x4+(1080p).mp4" /> */}
+        <source src="https://mik-development.s3.eu-central-1.amazonaws.com/TimesFour-Placeholder.mov" />
       </video>
     </div>
   );

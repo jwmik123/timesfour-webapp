@@ -22,8 +22,12 @@ export const Navigation = ({ font }) => {
   const bebas = font.className;
   const [isActive, setActive] = useState(false);
   const pathname = usePathname();
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [screenHeight, setScreenHeight] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(
+    () => typeof window !== "undefined" && window.innerWidth
+  );
+  const [screenHeight, setScreenHeight] = useState(
+    () => typeof window !== "undefined" && window.innerHeight
+  );
 
   useEffect(() => {
     const handleResize = () => {

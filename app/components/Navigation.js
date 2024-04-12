@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navData = [
@@ -20,14 +20,27 @@ const footerData = [
 
 export const Navigation = ({ font }) => {
   const bebas = font.className;
-  const [hovered, setHovered] = useState(false);
   const [isActive, setActive] = useState(false);
   const pathname = usePathname();
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenHeight, setScreenHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      setScreenHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const variants = {
     open: {
-      width: 480,
-      height: 650,
+      width: screenWidth <= 640 ? screenWidth - 30 : 480,
+      height: screenHeight - 30,
       right: "-25px",
       top: "-25px",
       transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
@@ -113,7 +126,7 @@ export const Navigation = ({ font }) => {
                     {navData.map((item, index) => (
                       <div key={index} className={"perspective-[120px]"}>
                         <motion.li
-                          className={`text-5xl font-medium ${
+                          className={`text-4xl md:text-5xl font-medium ${
                             pathname === item.link ? "ml-10 list-disc" : ""
                           } hover:underline`}
                           custom={index}

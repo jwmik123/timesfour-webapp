@@ -10,8 +10,11 @@ export default function Projects() {
         <Navigation font={bebas} />
       </div>
 
-      <section id="projects" className="grid h-screen grid-cols-2">
-        <div className="overflow-y-auto">
+      <section
+        id="projects"
+        className="grid h-screen grid-cols-2 overflow-y-hidden "
+      >
+        <div className="overflow-y-auto scrollbar">
           <ul className="divide-y">
             <li className="project-li">
               <Link className="link" href="#">
@@ -88,7 +91,9 @@ export default function Projects() {
           </ul>
         </div>
 
-        <div className="fixed right-0 w-1/2 bg-diana h-[100vh] "></div>
+        <div className="fixed right-0 flex items-center justify-center w-1/2 h-screen bg-diana">
+          Here comes the project image
+        </div>
       </section>
     </>
   );

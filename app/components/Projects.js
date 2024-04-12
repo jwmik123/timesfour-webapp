@@ -45,7 +45,7 @@ export default function Projects({ font }) {
   );
 }
 
-const Project = ({ title, index, setModal, font }) => {
+const Project = ({ title, index, setModal }) => {
   return (
     <div
       className="relative flex items-center justify-between w-full px-16 py-16 overflow-hidden duration-500 transform cursor-pointer group hover:px-12"

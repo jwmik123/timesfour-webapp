@@ -1,7 +1,6 @@
 "use client";
 import { useLayoutEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
-import { motion } from "framer-motion";
 
 import Masthead from "@/app/components/Masthead";
 import Marquee from "@/app/components/Marquee";
@@ -11,6 +10,7 @@ import { Bebas_Neue } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
 import Projects from "./components/Projects";
 import Paragraph from "./components/Paragraph";
+import Footer from "./components/Footer";
 
 import Preloader from "./components/Preloader";
 import Intro from "./components/Intro";
@@ -69,7 +69,6 @@ export default function Home() {
               <h2 className="text-xl">
                 <li> Hoe wij onze klanten helpen</li>
               </h2>
-              {/* <Carousel /> */}
               <Projects font={bebas} />
             </div>
             <div className="flex items-center justify-center w-full pb-36">
@@ -84,9 +83,9 @@ export default function Home() {
               </div>
             </div>
             <VideoPlayer />
-
             <div className="mx-10"></div>
             <Reviews />
+            <Footer />
           </div>
         </>
       )}

@@ -77,17 +77,6 @@ export const Navigation = ({ font }) => {
     },
   };
 
-  const playAudio = () => {
-    const audio = new Audio("click.mp3"); // Replace with the path to your hover MP3 file
-    audio.play();
-  };
-
-  const stopAudio = () => {
-    const audio = new Audio("click.mp3"); // Replace with the path to your hover MP3 file
-    audio.pause();
-    audio.currentTime = 0; // Reset audio to start
-  };
-
   return (
     <div className={"fixed z-50 w-full"}>
       <div className="flex justify-between px-10 py-10">

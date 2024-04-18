@@ -44,7 +44,7 @@ export const Navigation = ({ font }) => {
   const variants = {
     open: {
       width: screenWidth <= 640 ? screenWidth - 30 : 480,
-      height: screenHeight - 30,
+      height: screenWidth <= 640 ? screenHeight - 30 : 650,
       right: "-25px",
       top: "-25px",
       transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
@@ -95,16 +95,16 @@ export const Navigation = ({ font }) => {
   };
 
   return (
-    <div className={"fixed z-50 w-full"}>
-      <div className="flex justify-between px-10 py-10">
-        <motion.div
+    <nav className={"fixed z-50 w-full"}>
+      <div className="flex justify-end px-10 py-10">
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           className={`${bebas} min-w-[8rem] cursor-pointer text-6xl`}
         >
           X4
-        </motion.div>
+        </motion.div> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -132,14 +132,16 @@ export const Navigation = ({ font }) => {
                         <motion.li
                           className={`text-4xl md:text-5xl font-medium ${
                             pathname === item.link ? "ml-10 list-disc" : ""
-                          } hover:underline`}
+                          }`}
                           custom={index}
                           variants={perspective}
                           animate={"enter"}
                           exit={"exit"}
                           initial={"initial"}
                         >
-                          <Link href={item.link}>{item.title}</Link>
+                          <Link href={item.link}>
+                            <span>{item.title}</span>
+                          </Link>
                         </motion.li>
                       </div>
                     ))}
@@ -157,7 +159,7 @@ export const Navigation = ({ font }) => {
                         initial={"initial"}
                         className={"link w-1/2 pt-2"}
                       >
-                        {item.title}
+                        <span>{item.title}</span>
                       </motion.a>
                     ))}
                   </div>
@@ -179,6 +181,6 @@ export const Navigation = ({ font }) => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </nav>
   );
 };

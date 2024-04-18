@@ -9,7 +9,6 @@ import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Reviews from "@/app/components/Reviews";
 import Projects from "./components/Projects";
-import Paragraph from "./components/Paragraph";
 import Footer from "./components/Footer";
 
 import Preloader from "./components/Preloader";
@@ -62,10 +61,7 @@ export default function Home() {
             <Navigation font={bebas} />
             <Masthead font={bebas} />
             <Marquee />
-            {/* <div className="mx-10 max-w-screen py-44">
-              <Paragraph text={sentence} font={bebas} />
-            </div> */}
-            <div className="p-12 pb-24 mx-10 my-32 bg-green-300 text-spruce rounded-3xl">
+            <div className="p-12 pb-24 mx-2 my-32 bg-green-300 md:mx-10 text-spruce rounded-3xl">
               <h2 className="text-xl">
                 <li> Hoe wij onze klanten helpen</li>
               </h2>

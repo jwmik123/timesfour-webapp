@@ -1,3 +1,3 @@
 export default function Layout({ children }) {
-  return <div className="max-h-screen overflow-hidden">{children}</div>;
+  return <div className="h-screen overflow-y-hidden">{children}</div>;
 }

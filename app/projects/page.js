@@ -1,9 +1,22 @@
+"use client";
 import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect } from "react";
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 export default function Projects() {
+  const router = useRouter();
+
+  const refreshPage = () => {
+    router.push("/projects");
+  };
+
+  useEffect(() => {
+    refreshPage();
+  }, []);
+
   return (
     <>
       <div className="relative pb-32">
@@ -12,7 +25,7 @@ export default function Projects() {
 
       <section
         id="projects"
-        className="grid h-screen grid-cols-2 overflow-y-hidden "
+        className="grid h-screen grid-cols-2 overflow-y-hidden"
       >
         <div className="overflow-y-auto scrollbar">
           <ul className="divide-y">

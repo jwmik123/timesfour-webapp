@@ -2,8 +2,6 @@ import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
-import Footer from "@/app/components/Footer";
-
 const inter = Inter({ subsets: ["latin"] });
 import "./globals.css";
 
@@ -36,9 +34,7 @@ export default function RootLayout({ children }) {
           href="./favicon/favicon-16x16.png"
         />
       </head>
-      <body
-        className={`${inter.className} overflow-hidden selection:bg-yellow-300`}
-      >
+      <body className={`${inter.className} selection:bg-yellow-300`}>
         <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
           {children}
         </div>

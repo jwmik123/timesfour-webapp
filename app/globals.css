@@ -60,6 +60,44 @@ footer .link span:hover::after {
   width: 100%;
 }
 
+nav li span {
+  position: relative;
+  display: inline-block;
+}
+
+nav li span::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  border-bottom: 3px solid black;
+  transition: width 0.3s;
+}
+
+nav a span:hover::after {
+  width: 100%;
+}
+
+.link span {
+  position: relative;
+  display: inline-block;
+}
+
+.link span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-bottom: 1px solid black;
+  transition: width 0.3s;
+}
+
+.link span:hover::after {
+  width: 100%;
+}
+
 /* Grain inspiration from https://mrboost.nl/ */
 w-embed::before {
   content: " ";

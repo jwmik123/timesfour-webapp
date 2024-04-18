@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Bebas_Neue } from "next/font/google";
+const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
 export default function PreloaderClient({ mediaFiles, onAllLoaded }) {
   const [progress, setProgress] = useState(0);
@@ -30,7 +32,11 @@ export default function PreloaderClient({ mediaFiles, onAllLoaded }) {
     <div>
       {progress < 100 && (
         <>
-          <div>{progress}%</div>
+          <div
+            className={`flex items-center justify-center w-screen h-screen text-black bg-green-300 text-2xl ${bebas.className}`}
+          >
+            {progress}%
+          </div>
         </>
       )}
     </div>

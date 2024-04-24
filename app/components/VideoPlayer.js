@@ -28,7 +28,7 @@ export default function VideoPlayer() {
       {
         width: "70%",
         borderRadius: "25px",
-      }
+      },
     );
   }, []);
 
@@ -46,7 +46,6 @@ export default function VideoPlayer() {
         muted
         playsInline
       >
-        {/* <source src="https://mik-development.s3.eu-central-1.amazonaws.com/placeholder-x4+(1080p).mp4" /> */}
         <source src="https://mik-development.s3.eu-central-1.amazonaws.com/TimesFour-Placeholder.mov" />
       </video>
     </div>

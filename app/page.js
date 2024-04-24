@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 
 import Preloader from "./components/Preloader";
 import Intro from "./components/Intro";
+import ProjectMobile from "./components/ProjectsMobile";
 
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
 
@@ -65,15 +66,16 @@ export default function Home() {
               <h2 className="text-xl">
                 <li> Hoe wij onze klanten helpen</li>
               </h2>
-              <Projects font={bebas} />
+              {/* <Projects font={bebas} /> */}
+              <ProjectMobile font={bebas} />
             </div>
             <div className="flex items-center justify-center w-full pb-36">
-              <div className="w-[40%]">
+              <div className="w-[80%] md:w-[40%]">
                 <p className="text-lg text-gray-500">
                   Ontdek al onze projecten en klanten die Times Four heeft
                   geholpen om hun doelen te behalen.
                 </p>
-                <button className="mt-2 text-2xl underline underline-offset-3 hover:text-yellow-400">
+                <button className="mt-2 text-2xl underline underline-offset-3 hover:text-green-300">
                   Alle projecten
                 </button>
               </div>

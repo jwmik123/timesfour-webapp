@@ -2,21 +2,19 @@
 import { Navigation } from "@/app/components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
-export default function Projects() {
-  const router = useRouter();
 
+export default function Projects() {
   return (
     <>
-      <div className="relative pb-32">
+      <div className="relative">
         <Navigation font={bebas} />
       </div>
       <section id="projects" className="grid h-screen grid-cols-2">
         <Suspense fallback={<div>Loading...</div>}>
-          <div className="overflow-y-auto scrollbar">
+          <div className="overflow-y-scroll scrollbar" style={{}}>
             <ul className="divide-y">
               <li className="project-li">
                 <Link className="link" href="#">

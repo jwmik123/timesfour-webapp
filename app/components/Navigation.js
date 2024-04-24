@@ -23,10 +23,10 @@ export const Navigation = ({ font }) => {
   const [isActive, setActive] = useState(false);
   const pathname = usePathname();
   const [screenWidth, setScreenWidth] = useState(
-    () => typeof window !== "undefined" && window.innerWidth
+    () => typeof window !== "undefined" && window.innerWidth,
   );
   const [screenHeight, setScreenHeight] = useState(
-    () => typeof window !== "undefined" && window.innerHeight
+    () => typeof window !== "undefined" && window.innerHeight,
   );
 
   useEffect(() => {
@@ -140,7 +140,18 @@ export const Navigation = ({ font }) => {
                           initial={"initial"}
                         >
                           <Link href={item.link}>
-                            <span>{item.title}</span>
+                            {item.title === "Vacatures" ? (
+                              <div className="relative group">
+                                <h3 className="line-through opacity-80">
+                                  {item.title}
+                                </h3>
+                                <span className="hidden after:border-none text-base text-white rounded p-1 right-0 bg-spruce absolute top-2 group-hover:flex">
+                                  Comming Soon 👀
+                                </span>
+                              </div>
+                            ) : (
+                              <span>{item.title}</span>
+                            )}
                           </Link>
                         </motion.li>
                       </div>

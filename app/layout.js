@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           href="./favicon/favicon-16x16.png"
         />
       </head>
-      <body className={`${inter.className} selection:bg-yellow-300`}>
+      <body className={`${inter.className} selection:bg-green-300`}>
         <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
           {children}
         </div>

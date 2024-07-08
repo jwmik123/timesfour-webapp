@@ -23,7 +23,7 @@ export default function Projects() {
                 <ArrowUpRight size={54} />
               </li>
               <li className="project-li">
-                <Link className="link" href="#">
+                <Link className="link" href="">
                   Mursee
                 </Link>
                 <ArrowUpRight size={54} />

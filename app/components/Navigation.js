@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -139,7 +138,7 @@ export const Navigation = ({ font }) => {
                           exit={"exit"}
                           initial={"initial"}
                         >
-                          <Link href={item.link}>
+                          <a href={item.link}>
                             {item.title === "Vacatures" ? (
                               <div className="relative group">
                                 <h3 className="line-through opacity-80">
@@ -152,7 +151,7 @@ export const Navigation = ({ font }) => {
                             ) : (
                               <span>{item.title}</span>
                             )}
-                          </Link>
+                          </a>
                         </motion.li>
                       </div>
                     ))}

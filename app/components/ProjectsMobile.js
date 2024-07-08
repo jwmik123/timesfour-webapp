@@ -4,6 +4,7 @@ export default function ProjectMobile({ font }) {
   const bebas = font.className;
   const projects = [
     {
+      id: 1,
       title: "Mik Development",
       src: "mikdevelopment.png",
       color: "black",

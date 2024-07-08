@@ -11,6 +11,7 @@
   "dependencies": {
     "@barba/core": "^2.9.7",
     "@barba/css": "^2.1.15",
+    "@portabletext/react": "^3.1.0",
     "@react-three/drei": "^9.88.4",
     "@react-three/fiber": "^8.15.4",
     "@sanity/image-url": "^1.0.2",
@@ -39,5 +40,8 @@
     "swiper": "^10.0.4",
     "tailwindcss": "3.3.3",
     "three": "^0.157.0"
+  },
+  "devDependencies": {
+    "typescript": "5.5.2"
   }
 }

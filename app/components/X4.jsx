@@ -1,11 +1,13 @@
 import useSpline from "@splinetool/r3f-spline";
-import { Edges, PerspectiveCamera } from "@react-three/drei";
-import { MeshTransmissionMaterial } from "@react-three/drei";
+import {
+  Edges,
+  PerspectiveCamera,
+  MeshTransmissionMaterial,
+} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { useControls, Leva } from "leva";
-import { useRef } from "react";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 export default function Model({ ...props }) {

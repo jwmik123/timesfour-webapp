@@ -76,7 +76,7 @@ export default function Home() {
                   geholpen om hun doelen te behalen.
                 </p>
                 <button className="mt-2 text-2xl underline underline-offset-3 hover:text-green-300">
-                  Alle projecten
+                  <a href="/projects">Alle projecten</a>
                 </button>
               </div>
             </div>

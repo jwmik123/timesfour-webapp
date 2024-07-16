@@ -2,12 +2,12 @@
 import { useLayoutEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 
-import Masthead from "@/app/components/Masthead";
-import Marquee from "@/app/components/Marquee";
-import VideoPlayer from "@/app/components/VideoPlayer";
-import { Navigation } from "@/app/components/Navigation";
+import Masthead from "./components/Masthead";
+import Marquee from "./components/Marquee";
+import VideoPlayer from "./components/VideoPlayer";
+import { Navigation } from "./components/Navigation";
 import { Bebas_Neue } from "next/font/google";
-import Reviews from "@/app/components/Reviews";
+import Reviews from "./components/Reviews";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 

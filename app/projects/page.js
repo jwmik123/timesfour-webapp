@@ -1,5 +1,5 @@
 "use client";
-import { Navigation } from "@/app/components/Navigation";
+import { Navigation } from "../components/Navigation";
 import { Bebas_Neue } from "next/font/google";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";

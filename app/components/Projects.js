@@ -1,23 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { sanityFetch } from "../sanity/client";
 import Modal from "./modal";
-
-const EVENTS_QUERY =
-  '*[_type == "event"]{_id, name, slug, date}|order(date desc)';
 
 export default function Projects({ font }) {
   const [events, setEvents] = useState([]);
   const bebas = font.className;
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const fetchedEvents = await sanityFetch({ query: EVENTS_QUERY });
-      setEvents(fetchedEvents);
-    };
-
-    fetchEvents();
-  }, []);
 
   const projects = [
     {
@@ -33,6 +20,11 @@ export default function Projects({ font }) {
     {
       title: "VitalSelect",
       src: "vitalselect.png",
+      color: "black",
+    },
+    {
+      title: "Megosu",
+      src: "megosu.jpg",
       color: "black",
     },
   ];

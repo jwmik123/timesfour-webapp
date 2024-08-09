@@ -86,7 +86,7 @@ const Modal = ({ modal, projects }) => {
               <div
                 key={`modal_${index}`}
                 style={{ backgroundColor: color }}
-                className=" flex items-center justify-center h-[100%]"
+                className="flex items-center justify-center h-[100%]"
               >
                 <Image
                   src={`/${src}`}

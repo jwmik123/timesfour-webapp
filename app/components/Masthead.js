@@ -18,7 +18,7 @@ export default function Masthead({ font }) {
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`font-rift text-bold absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5  font-bold`}
+        className={`font-rift text-bold absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5 font-bold`}
       >
         <StaggerText text="Times Four" />
       </div>
@@ -26,7 +26,7 @@ export default function Masthead({ font }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
-        className="hidden absolute text-xl md:block text-white rotate-90 -left-10 bottom-24"
+        className="absolute hidden text-xl text-white rotate-90 md:block -left-10 bottom-24"
       >
         <span className="uppercase">scroll down</span>
       </motion.div>
@@ -34,7 +34,7 @@ export default function Masthead({ font }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 3.5 }}
-        className="absolute right-10 text-base md:text-xl text-white bottom-10"
+        className="absolute text-base text-white right-10 md:text-xl bottom-10"
       >
         <span>__ a creative studio</span>
       </motion.div>

@@ -80,6 +80,15 @@ export default function Home() {
                 </button>
               </div>
             </div>
+            <div>
+              <h1>
+                Ontdek onze uitgebreide diensten: van e-commerce en
+                websiteontwikkeling tot opvallend design, 3D-animaties, en
+                professionele filmproducties. Wij brengen uw merk tot leven met
+                creatieve reclameoplossingen op maat. Samen realiseren we uw
+                digitale dromen.
+              </h1>
+            </div>
             <VideoPlayer />
             <div className="mx-10"></div>
             <Reviews />

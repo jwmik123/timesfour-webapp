@@ -11,9 +11,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        yellow: {
-          400: "#FFDF00",
-        },
         spruce: "#1d292f",
         diana: "#354f52",
         cutty: "#52796f",

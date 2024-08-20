@@ -10,8 +10,7 @@ export const metadata = {
   description: "Where brands bloom in the garden of tomorrow.",
   image: "/favicon/favicon-32x32.png",
 };
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, data }) {
   return (
     <html lang="en">
       <head>
@@ -37,8 +36,8 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} selection:bg-green-300`}>
         <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
           {children}
+          {console.log(data)}
         </div>
-
         <SpeedInsights />
         <Analytics />
         <div className="bg-grain w-embed" />
@@ -46,3 +45,18 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/projects`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    data.data.forEach((project) => {
+      console.log("Project ID:", project.id);
+      console.log("Project Attributes:", project.attributes);
+      console.log("Project Title:", project.attributes.title);
+    });
+  });

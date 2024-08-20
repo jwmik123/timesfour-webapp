@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Center, OrbitControls, Sparkles, Text } from "@react-three/drei";
 import Model from "./X4";
 
 export default function Masthead({ font }) {
@@ -14,6 +14,7 @@ export default function Masthead({ font }) {
         className="relative w-full aspect-video"
       >
         <OrbitControls enableZoom={false} />
+        {/* <Text scale={120}>Times Four</Text> */}
         <Model />
       </Canvas>
       <div
@@ -55,7 +56,7 @@ const StaggerText = ({ text }) => {
     }),
   };
   return (
-    <div className="relative text-[20vw] font-bold uppercase text-white mix-blend-overlay">
+    <div className="relative text-[20vw] font-bold uppercase text-white mix-blend-overlay bg-blend-overlay will-change-transform">
       <motion.h1 className="">
         {letters.map((letter, index) => (
           <motion.span

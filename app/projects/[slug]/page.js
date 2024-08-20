@@ -1,15 +1,15 @@
 "use client";
 import * as THREE from "three";
-import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useRef, useMemo, useReducer } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Physics, RigidBody, BallCollider } from "@react-three/rapier";
+import { gsap } from "gsap";
 
-import halftoneVertexShader from "./halftone/vertex.js";
-import halftoneFragmentShader from "./halftone/fragment.js";
+import halftoneVertexShader from "../../../public/halftone/vertex.js";
+import halftoneFragmentShader from "../../../public/halftone/fragment.js";
 
 const accents = ["#4060ff", "#20ffa0", "#ff4060", "#ffcc00"];
 const shuffle = (accent = 0) => [
@@ -77,6 +77,7 @@ export default function projectPage({ params }) {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      <div></div>
     </main>
   );
 }
@@ -99,13 +100,13 @@ function Scene() {
           intensity={1}
           castShadow
         />
-        <Physics gravity={[1, 1, 1]}>
+        <Physics debug gravity={[1, 1, 1]}>
           <Pointer />
           {connectors.map((props, i) => (
             <Connector key={i} {...props} />
           ))}
           <Connector position={[10, 10, 5]}>
-            <Model></Model>
+            <Model />
           </Connector>
         </Physics>
       </Canvas>
@@ -115,15 +116,26 @@ function Scene() {
 
 function Pointer({ vec = new THREE.Vector3() }) {
   const ref = useRef();
+  let targetPos = new THREE.Vector3();
+  const animatedPos = useRef(new THREE.Vector3());
   useFrame(({ mouse, viewport }) => {
-    ref.current?.setNextKinematicTranslation(
-      vec.set(
-        (mouse.x * viewport.width) / 2,
-        (mouse.y * viewport.height) / 2,
-        0
-      )
+    targetPos = vec.set(
+      (mouse.x * viewport.width) / 2,
+      (mouse.y * viewport.height) / 2,
+      0
     );
+
+    gsap.to(animatedPos.current, {
+      x: targetPos.x,
+      y: targetPos.y,
+      duration: 0.5,
+      ease: "power1.out",
+      onUpdate: () => {
+        ref.current?.setNextKinematicTranslation(animatedPos.current);
+      },
+    });
   });
+
   return (
     <RigidBody
       position={[0, 0, 0]}
@@ -141,7 +153,7 @@ function Model({ children, color = "white", roughness = 0, ...props }) {
   const { nodes } = useGLTF("/wooz-smile.glb");
 
   const materialParameters = {};
-  materialParameters.color = "#86efac"; //#ff3d00 or #86efac
+  materialParameters.color = "#86efac";
   materialParameters.shadowColor = "#1d292f";
   materialParameters.lightColor = "#e5ffe0";
 
@@ -196,7 +208,7 @@ function Connector({
   const api = useRef();
   const pos = useMemo(() => position || [r(10), r(10), r(10)], []);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     delta = Math.min(0.1, delta);
     api.current?.applyImpulse(
       vec.copy(api.current.translation()).negate().multiplyScalar(0.04)

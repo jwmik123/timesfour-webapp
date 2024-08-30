@@ -14,7 +14,6 @@ export default function Masthead({ font }) {
         className="relative w-full aspect-video"
       >
         <OrbitControls enableZoom={false} />
-        {/* <Text scale={120}>Times Four</Text> */}
         <Model />
       </Canvas>
       <div

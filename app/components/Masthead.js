@@ -27,7 +27,7 @@ export default function Masthead() {
         transition={{ duration: 1, delay: 3 }}
         className="absolute flex flex-col gap-4 p-4 text-xl text-white -translate-x-1/2 border-2 border-white bg-cutty top-10 left-1/2"
       >
-        <span className="text-2xl font-bold">
+        <span className="font-bold text-md md:text-2xl">
           🚀 Nieuwe website is onderweg!
         </span>
       </motion.div>

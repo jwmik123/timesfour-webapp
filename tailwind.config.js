@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       rift: ["rift", "sans-serif"],
+      dmSans: ["var(--font-dm-sans)"],
     },
     extend: {
       colors: {

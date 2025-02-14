@@ -18,9 +18,9 @@ export default function Masthead({ font }) {
       </Canvas>
       <div
         style={{ userSelect: "none" }}
-        className={`font-rift text-bold absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5 font-bold`}
+        className={`font-dmSans absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5 font-black`}
       >
-        <StaggerText text="Times Four" />
+        <StaggerText text="Squared" />
       </div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function Masthead({ font }) {
         transition={{ duration: 1, delay: 3.5 }}
         className="absolute text-base text-white right-10 md:text-xl bottom-10"
       >
-        <span>__ a creative studio</span>
+        <span>_ a creative studio</span>
       </motion.div>
     </div>
   );
@@ -54,9 +54,21 @@ const StaggerText = ({ text }) => {
       },
     }),
   };
+
+  const squareVariant = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 3.7 + letters.length * 0.1,
+      },
+    },
+  };
+
   return (
-    <div className="relative text-[20vw] font-bold uppercase text-white mix-blend-overlay bg-blend-overlay will-change-transform">
-      <motion.h1 className="">
+    <div className="relative text-[20vw] font-bold tracking-tighter text-white mix-blend-overlay bg-blend-overlay will-change-transform">
+      <motion.h1 className="flex">
         {letters.map((letter, index) => (
           <motion.span
             key={index}
@@ -68,6 +80,12 @@ const StaggerText = ({ text }) => {
             {letter}
           </motion.span>
         ))}
+        <motion.div
+          variants={squareVariant}
+          initial="hidden"
+          animate="visible"
+          className="w-[1.6vw] h-[1.6vw] bg-white ml-2 self-center -mb-[12vw]"
+        />
       </motion.h1>
     </div>
   );

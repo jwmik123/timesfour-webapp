@@ -13,7 +13,7 @@ const Intro = () => {
         className="loading-screen fixed z-[9999] flex h-[100vh] w-full cursor-wait items-center justify-center bg-green-300"
       >
         <div className={`${bebas.className} text-spruce text-5xl`}>
-          Welcome to Times Four
+          Welcome to Squared.
         </div>
       </motion.div>
       <motion.div

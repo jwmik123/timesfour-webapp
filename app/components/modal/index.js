@@ -106,16 +106,16 @@ const Modal = ({ modal, projects }) => {
         variants={scaleAnimation}
         initial={"initial"}
         animate={active ? "open" : "closed"}
-        className="z-20 w-[80px] h-[80px] bg-spruce absolute pointer-events-none rounded-full flex items-center justify-center"
+        className="z-20 w-[160px] h-[40px] bg-spruce absolute pointer-events-none rounded-full flex items-center justify-center"
       ></motion.div>
       <motion.div
         ref={cursorLabel}
         variants={scaleAnimation}
         initial={"initial"}
         animate={active ? "open" : "closed"}
-        className="z-20 w-[80px] h-[80px] bg-transparent absolute pointer-events-none rounded-full flex items-center justify-center text-white"
+        className="z-20 w-[160px] h-[80px] bg-transparent absolute pointer-events-none rounded-full flex items-center justify-center text-white"
       >
-        View
+        Bekijk project
       </motion.div>
     </>
   );

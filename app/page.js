@@ -72,7 +72,7 @@ export default function Home() {
             <div className="flex items-center justify-center w-full pb-36">
               <div className="w-[80%] md:w-[40%]">
                 <p className="text-lg text-gray-500">
-                  Ontdek al onze projecten en klanten die Times Four heeft
+                  Ontdek al onze projecten en klanten die Squared. heeft
                   geholpen om hun doelen te behalen.
                 </p>
                 <button className="mt-2 text-2xl underline underline-offset-3 hover:text-green-300">
@@ -80,15 +80,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div>
-              <h1>
-                Ontdek onze uitgebreide diensten: van e-commerce en
-                websiteontwikkeling tot opvallend design, 3D-animaties, en
-                professionele filmproducties. Wij brengen uw merk tot leven met
-                creatieve reclameoplossingen op maat. Samen realiseren we uw
-                digitale dromen.
-              </h1>
-            </div>
+
             <VideoPlayer />
             <div className="mx-10"></div>
             <Reviews />

@@ -1,12 +1,14 @@
 import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"] });
 import "./globals.css";
 
 export const metadata = {
-  title: "Times Four - Creative Studio",
+  title: "Squared. - Creative Studio",
   description: "Where brands bloom in the garden of tomorrow.",
   image: "/favicon/favicon-32x32.png",
 };
@@ -33,10 +35,9 @@ export default function RootLayout({ children, data }) {
           href="./favicon/favicon-16x16.png"
         />
       </head>
-      <body className={`${inter.className} selection:bg-green-300`}>
+      <body className={`${dmSans.className} selection:bg-green-300`}>
         <div className="min-h-screen bg-spruce content-slide rounded-bl-3xl rounded-br-3xl">
           {children}
-          {console.log(data)}
         </div>
         <SpeedInsights />
         <Analytics />
@@ -51,12 +52,4 @@ fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/projects`, {
   headers: {
     "Content-Type": "application/json",
   },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    data.data.forEach((project) => {
-      console.log("Project ID:", project.id);
-      console.log("Project Attributes:", project.attributes);
-      console.log("Project Title:", project.attributes.title);
-    });
-  });
+}).then((response) => response.json());

@@ -25,9 +25,9 @@ export default function Masthead() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
-        className="absolute flex flex-col gap-4 p-4 text-xl text-white -translate-x-1/2 border-2 border-white bg-cutty top-10 left-1/2"
+        className="absolute flex flex-col min-w-full gap-4 p-4 text-xl text-white -translate-x-1/2 border-2 border-white md:min-w-96 bg-cutty top-10 left-1/2"
       >
-        <span className="font-bold text-md md:text-2xl">
+        <span className="font-bold text-center  md:text-2xl">
           🚀 Nieuwe website is onderweg!
         </span>
       </motion.div>

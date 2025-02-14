@@ -59,15 +59,15 @@ export default function Home() {
         <>
           <Intro />
           <div className={`relative w-full`}>
-            <Navigation font={bebas} />
+            {/* <Navigation font={bebas} /> */}
             <Masthead font={bebas} />
-            <Marquee />
+            {/* <Marquee />
             <div className="p-12 pb-24 mx-2 my-32 bg-green-300 md:mx-10 text-spruce rounded-3xl">
               <h2 className="text-xl">
                 <li> Hoe wij onze klanten helpen</li>
               </h2>
               <Projects font={bebas} />
-              {/* <ProjectMobile font={bebas} /> */}
+              {/* <ProjectMobile font={bebas} /> 
             </div>
             <div className="flex items-center justify-center w-full pb-36">
               <div className="w-[80%] md:w-[40%]">
@@ -84,7 +84,7 @@ export default function Home() {
             <VideoPlayer />
             <div className="mx-10"></div>
             <Reviews />
-            <Footer />
+            <Footer /> */}
           </div>
         </>
       )}

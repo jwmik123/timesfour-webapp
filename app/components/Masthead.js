@@ -4,8 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, Sparkles, Text } from "@react-three/drei";
 import Model from "./X4";
 
-export default function Masthead({ font }) {
-  const abril = font.className;
+export default function Masthead() {
   return (
     <div className="relative md:mx-10 mx-1 h-[100vh]">
       <Canvas
@@ -20,16 +19,26 @@ export default function Masthead({ font }) {
         style={{ userSelect: "none" }}
         className={`font-dmSans absolute top-0 flex h-full w-full cursor-default flex-col items-center justify-center py-5 font-black`}
       >
-        <StaggerText text="Squared" />
+        <StaggerText text="squared" />
       </div>
       <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 3 }}
+        className="absolute flex flex-col gap-4 p-4 text-xl text-white -translate-x-1/2 border-2 border-white bg-cutty top-10 left-1/2"
+      >
+        <span className="text-2xl font-bold">
+          🚀 Nieuwe website is onderweg!
+        </span>
+      </motion.div>
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 3 }}
         className="absolute hidden text-xl text-white rotate-90 md:block -left-10 bottom-24"
       >
         <span className="uppercase">scroll down</span>
-      </motion.div>
+      </motion.div> */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

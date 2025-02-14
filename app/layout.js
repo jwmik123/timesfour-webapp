@@ -1,9 +1,7 @@
-import { Inter } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
 const dmSans = DM_Sans({ variable: "--font-dm-sans", subsets: ["latin"] });
 import "./globals.css";
 
@@ -12,7 +10,8 @@ export const metadata = {
   description: "Where brands bloom in the garden of tomorrow.",
   image: "/favicon/favicon-32x32.png",
 };
-export default function RootLayout({ children, data }) {
+
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
